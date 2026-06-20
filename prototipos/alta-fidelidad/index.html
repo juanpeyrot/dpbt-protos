@@ -917,7 +917,7 @@ html, body {
    ======================================== */
 .bottom-action {
   padding: 12px 20px;
-  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  padding-bottom: max(76px, env(safe-area-inset-bottom));
   background: var(--canvas);
   border-top: 1px solid var(--card-border);
 }
@@ -1538,6 +1538,218 @@ html, body {
 .justify-between { justify-content: space-between; }
 .w-full { width: 100%; }
 .hidden { display: none !important; }
+
+/* ========================================
+   SETTINGS / PROFILE
+   ======================================== */
+.settings-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 24px 24px;
+  background: var(--deep-green);
+  color: var(--on-dark);
+  gap: 8px;
+}
+
+.settings-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--on-dark);
+  margin-bottom: 4px;
+  border: 2px solid rgba(255,255,255,.3);
+}
+
+.settings-profile-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.settings-profile-email {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+}
+
+.settings-profile-role {
+  margin-top: 4px;
+  padding: 4px 14px;
+  border-radius: var(--r-pill);
+  background: rgba(255,255,255,.12);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+}
+
+.settings-section {
+  padding: 20px 20px 0;
+}
+
+.settings-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--canvas);
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-sm);
+  margin-bottom: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  transition: background 0.15s;
+}
+
+.settings-row:active { background: var(--soft-stone); }
+
+.settings-row-icon {
+  font-size: 20px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.settings-row-label { flex: 1; font-weight: 500; }
+
+.settings-row-arrow {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.settings-row.danger { color: var(--error); }
+.settings-row.danger .settings-row-label { color: var(--error); }
+
+.settings-edit-form {
+  padding: 0 20px;
+}
+
+.settings-divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: 20px 20px 0;
+}
+
+/* ========================================
+   CARD PAYMENT VIEW
+   ======================================== */
+.card-visual {
+  margin: 20px 20px 0;
+  background: linear-gradient(135deg, #003c33 0%, #071829 100%);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  color: #fff;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(0,0,0,.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-visual::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+}
+
+.card-visual::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.04);
+}
+
+.card-type-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.6);
+}
+
+.card-chip {
+  font-size: 28px;
+  margin: 12px 0 8px;
+}
+
+.card-number-display {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,.9);
+}
+
+.card-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.card-field-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 3px;
+}
+
+.card-holder-display, .card-expiry-display {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.mostrador-banner {
+  margin: 20px 20px 0;
+  padding: 24px;
+  background: var(--pale-green);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.mostrador-icon { font-size: 48px; }
+.mostrador-title { font-family: var(--font-display); font-size: 17px; font-weight: 600; color: var(--deep-green); }
+.mostrador-sub { font-size: 13px; color: var(--body-muted); line-height: 1.4; }
 </style>
 </head>
 <body>
@@ -1753,6 +1965,9 @@ html, body {
       <button class="tab-item" onclick="navigate('view-history')">
         <span class="tab-icon">🕐</span>Historial
       </button>
+      <button class="tab-item" onclick="navigate('view-settings')">
+        <span class="tab-icon">⚙️</span>Ajustes
+      </button>
     </div>
   </div>
 
@@ -1834,20 +2049,20 @@ html, body {
         <span class="section-title">Método de pago</span>
       </div>
       <div class="payment-section">
-        <div class="payment-option selected" onclick="selectPayment(this)">
+        <div class="payment-option selected" data-type="mostrador" onclick="selectPayment(this)">
+          <div class="payment-radio"></div>
+          <span class="payment-label">Pago en mostrador</span>
+          <span class="payment-icon">💵</span>
+        </div>
+        <div class="payment-option" data-type="debito" onclick="selectPayment(this)">
           <div class="payment-radio"></div>
           <span class="payment-label">Tarjeta de débito</span>
           <span class="payment-icon">💳</span>
         </div>
-        <div class="payment-option" onclick="selectPayment(this)">
+        <div class="payment-option" data-type="credito" onclick="selectPayment(this)">
           <div class="payment-radio"></div>
           <span class="payment-label">Tarjeta de crédito</span>
           <span class="payment-icon">💳</span>
-        </div>
-        <div class="payment-option" onclick="selectPayment(this)">
-          <div class="payment-radio"></div>
-          <span class="payment-label">Mercado Pago</span>
-          <span class="payment-icon">📱</span>
         </div>
       </div>
 
@@ -1857,8 +2072,69 @@ html, body {
       <div class="cart-summary" id="checkout-summary"></div>
     </div>
     <div class="bottom-action">
-      <button class="btn-primary green" onclick="placeOrder()">
+      <button class="btn-primary green" id="checkout-pay-btn" onclick="handleCheckoutContinue()">
         Confirmar pedido — <span id="checkout-total">$0</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CARD PAYMENT -->
+  <div class="view" id="view-card">
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-icons"><span>📶</span><span>🔋</span></div>
+    </div>
+    <div class="top-nav">
+      <button class="nav-back" onclick="navigate('view-checkout')">← Método de pago</button>
+      <span class="nav-title">Datos de tarjeta</span>
+      <span style="width:60px"></span>
+    </div>
+    <div class="view-scroll">
+
+      <div class="card-visual">
+        <div class="card-type-label" id="card-type-label">Débito</div>
+        <div class="card-chip">▪︎▪︎▪︎</div>
+        <div class="card-number-display" id="card-number-display">•••• •••• •••• ••••</div>
+        <div class="card-bottom-row">
+          <div>
+            <div class="card-field-label">Titular</div>
+            <div class="card-holder-display" id="card-holder-display">NOMBRE APELLIDO</div>
+          </div>
+          <div style="text-align:right">
+            <div class="card-field-label">Vence</div>
+            <div class="card-expiry-display" id="card-expiry-display">MM/AA</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="auth-form" id="card-form" onsubmit="handleCardPayment(event)" style="padding-top:24px">
+        <div class="input-group">
+          <label class="input-label">Número de tarjeta</label>
+          <input class="input-field" type="tel" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumber(this)">
+          <span class="input-error" id="card-number-error">Ingresá los 16 dígitos</span>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Nombre del titular</label>
+          <input class="input-field" type="text" id="card-holder" placeholder="Como figura en la tarjeta" oninput="updateCardDisplay()">
+          <span class="input-error" id="card-holder-error">Ingresá el nombre del titular</span>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label class="input-label">Vencimiento</label>
+            <input class="input-field" type="tel" id="card-expiry" placeholder="MM/AA" maxlength="5" oninput="formatCardExpiry(this)">
+            <span class="input-error" id="card-expiry-error">Fecha inválida</span>
+          </div>
+          <div class="input-group">
+            <label class="input-label">CVV</label>
+            <input class="input-field" type="tel" id="card-cvv" placeholder="000" maxlength="4">
+            <span class="input-error" id="card-cvv-error">CVV inválido</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="bottom-action">
+      <button class="btn-primary green" onclick="handleCardPayment(event)">
+        Pagar — <span id="card-total">$0</span>
       </button>
     </div>
   </div>
@@ -1906,6 +2182,9 @@ html, body {
       <button class="tab-item" onclick="navigate('view-history')">
         <span class="tab-icon">🕐</span>Historial
       </button>
+      <button class="tab-item" onclick="navigate('view-settings')">
+        <span class="tab-icon">⚙️</span>Ajustes
+      </button>
     </div>
   </div>
 
@@ -1931,6 +2210,99 @@ html, body {
       <button class="tab-item active" onclick="navigate('view-history')">
         <span class="tab-icon">🕐</span>Historial
       </button>
+      <button class="tab-item" onclick="navigate('view-settings')">
+        <span class="tab-icon">⚙️</span>Ajustes
+      </button>
+    </div>
+  </div>
+
+  <!-- SETTINGS / PROFILE -->
+  <div class="view" id="view-settings">
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-icons"><span>📶</span><span>🔋</span></div>
+    </div>
+    <div class="top-nav">
+      <button class="nav-back" id="settings-back-btn" onclick="navigate(currentRole === 'staff' ? 'view-staff-dashboard' : 'view-home')" style="visibility:hidden">← Volver</button>
+      <span class="nav-title">Ajustes</span>
+      <span style="width:60px"></span>
+    </div>
+    <div class="view-scroll">
+
+      <!-- Profile card -->
+      <div class="settings-profile-card" id="settings-profile-card">
+        <div class="settings-avatar" id="settings-avatar">?</div>
+        <div class="settings-profile-name" id="settings-profile-name">Invitado</div>
+        <div class="settings-profile-email" id="settings-profile-email"></div>
+        <div class="settings-profile-role" id="settings-profile-role">Invitado</div>
+      </div>
+
+      <!-- Edit profile section -->
+      <div class="settings-section" id="settings-edit-section">
+        <div class="settings-section-title">Editar perfil</div>
+        <form class="settings-edit-form" id="profile-form" onsubmit="saveProfile(event)" style="padding:0">
+          <div class="input-group" style="margin-bottom:12px">
+            <label class="input-label">Nombre</label>
+            <input class="input-field" type="text" id="profile-name" placeholder="Tu nombre">
+          </div>
+          <div class="input-group" style="margin-bottom:16px">
+            <label class="input-label">Email</label>
+            <input class="input-field" type="email" id="profile-email" placeholder="email@universidad.edu">
+          </div>
+          <button type="submit" class="btn-primary green">Guardar cambios</button>
+        </form>
+      </div>
+
+      <!-- Guest prompt -->
+      <div class="settings-section" id="settings-guest-section" style="display:none">
+        <button class="btn-primary green" onclick="navigate('view-login')">Iniciar sesión</button>
+        <button class="btn-secondary w-full mt-8" style="justify-content:center;margin-top:10px" onclick="navigate('view-register')">Crear cuenta</button>
+      </div>
+
+      <div class="settings-divider"></div>
+
+      <!-- Account section -->
+      <div class="settings-section">
+        <div class="settings-section-title">Cuenta</div>
+        <button class="settings-row" onclick="navigate('view-home')">
+          <span class="settings-row-icon">🔔</span>
+          <span class="settings-row-label">Notificaciones</span>
+          <span class="settings-row-arrow">›</span>
+        </button>
+        <button class="settings-row" onclick="showToast('Próximamente disponible')">
+          <span class="settings-row-icon">🔒</span>
+          <span class="settings-row-label">Cambiar contraseña</span>
+          <span class="settings-row-arrow">›</span>
+        </button>
+      </div>
+
+      <div class="settings-divider"></div>
+
+      <!-- Logout -->
+      <div class="settings-section" id="settings-logout-section">
+        <div class="settings-section-title">Sesión</div>
+        <button class="settings-row danger" onclick="logout()">
+          <span class="settings-row-icon">🚪</span>
+          <span class="settings-row-label">Cerrar sesión</span>
+        </button>
+      </div>
+
+      <div style="height:100px"></div>
+    </div>
+
+    <div class="tab-bar">
+      <button class="tab-item" onclick="navigate('view-home')">
+        <span class="tab-icon">🏠</span>Menú
+      </button>
+      <button class="tab-item" onclick="navigate('view-tracking')">
+        <span class="tab-icon">📋</span>Pedido
+      </button>
+      <button class="tab-item" onclick="navigate('view-history')">
+        <span class="tab-icon">🕐</span>Historial
+      </button>
+      <button class="tab-item active" onclick="navigate('view-settings')">
+        <span class="tab-icon">⚙️</span>Ajustes
+      </button>
     </div>
   </div>
 
@@ -1944,9 +2316,12 @@ html, body {
       <span>9:41</span>
       <div class="status-icons"><span>📶</span><span>🔋</span></div>
     </div>
-    <div class="staff-header">
-      <div class="staff-title">Panel de pedidos</div>
-      <div class="staff-sub">Cafetería UniCafé — Hoy</div>
+    <div class="staff-header" style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div>
+        <div class="staff-title">Panel de pedidos</div>
+        <div class="staff-sub">Cafetería UniCafé — Hoy</div>
+      </div>
+      <button onclick="navigate('view-settings')" style="background:rgba(255,255,255,.15);border:none;border-radius:var(--r-full);width:38px;height:38px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0">⚙️</button>
     </div>
     <div class="view-scroll">
       <div class="staff-stats" id="staff-stats">
@@ -2010,6 +2385,7 @@ let activeOrder = null;
 let currentRole = 'student';
 let currentUser = null;
 let selectedRegRole = 'student';
+let selectedPaymentType = 'mostrador';
 
 const staffOrders = [
   { id: '#0043', student: 'Martina López', time: 'Hace 2 min', items: [{name:'Café con leche',qty:1},{name:'Medialuna',qty:2}], obs:'Sin azúcar', status:'pending' },
@@ -2024,12 +2400,17 @@ function navigate(viewId) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById(viewId).classList.add('active');
 
+  const hideRoleSwitcher = ['view-splash', 'view-login', 'view-register'].includes(viewId);
+  document.querySelector('.role-switcher').style.display = hideRoleSwitcher ? 'none' : 'flex';
+
   if (viewId === 'view-home') renderHome();
   if (viewId === 'view-cart') renderCart();
   if (viewId === 'view-checkout') renderCheckout();
   if (viewId === 'view-tracking') renderTracking();
   if (viewId === 'view-history') renderHistory();
   if (viewId === 'view-staff-dashboard') renderStaffDashboard();
+  if (viewId === 'view-settings') renderSettings();
+  if (viewId === 'view-card') renderCardView();
 }
 
 function switchRole(role) {
@@ -2363,8 +2744,13 @@ function renderCheckout() {
   const maxTime = Math.max(...cart.map(c => c.product.time));
   const eta = `${maxTime}-${maxTime + 3}`;
 
+  selectedPaymentType = 'mostrador';
+  document.querySelectorAll('.payment-option').forEach(p => p.classList.remove('selected'));
+  document.querySelector('.payment-option[data-type="mostrador"]').classList.add('selected');
+  document.getElementById('checkout-pay-btn').innerHTML =
+    'Confirmar pedido — <span id="checkout-total">$' + subtotal + '</span>';
+
   document.getElementById('checkout-eta').textContent = eta + ' min';
-  document.getElementById('checkout-total').textContent = '$' + subtotal;
   document.getElementById('checkout-summary').innerHTML = `
     ${cart.map(c => `<div class="summary-row"><span>${c.qty}x ${c.product.name}</span><span>$${c.product.price * c.qty}</span></div>`).join('')}
     <div class="summary-row"><span>Servicio</span><span>$0</span></div>
@@ -2375,6 +2761,107 @@ function renderCheckout() {
 function selectPayment(el) {
   document.querySelectorAll('.payment-option').forEach(p => p.classList.remove('selected'));
   el.classList.add('selected');
+  selectedPaymentType = el.dataset.type;
+
+  const btn = document.getElementById('checkout-pay-btn');
+  const subtotal = cart.reduce((s, c) => s + c.product.price * c.qty, 0);
+  if (selectedPaymentType === 'mostrador') {
+    btn.innerHTML = 'Confirmar pedido — <span id="checkout-total">$' + subtotal + '</span>';
+  } else {
+    btn.innerHTML = 'Ingresar datos de tarjeta →';
+  }
+}
+
+function handleCheckoutContinue() {
+  if (selectedPaymentType === 'mostrador') {
+    placeOrder();
+  } else {
+    navigate('view-card');
+  }
+}
+
+function renderCardView() {
+  const subtotal = cart.reduce((s, c) => s + c.product.price * c.qty, 0);
+  document.getElementById('card-total').textContent = '$' + subtotal;
+  document.getElementById('card-type-label').textContent =
+    selectedPaymentType === 'credito' ? 'Crédito' : 'Débito';
+  document.getElementById('card-number').value = '';
+  document.getElementById('card-holder').value = '';
+  document.getElementById('card-expiry').value = '';
+  document.getElementById('card-cvv').value = '';
+  document.getElementById('card-number-display').textContent = '•••• •••• •••• ••••';
+  document.getElementById('card-holder-display').textContent = 'NOMBRE APELLIDO';
+  document.getElementById('card-expiry-display').textContent = 'MM/AA';
+  document.querySelectorAll('#card-form .input-error').forEach(e => e.classList.remove('visible'));
+  document.querySelectorAll('#card-form .input-field').forEach(e => e.classList.remove('error'));
+}
+
+function formatCardNumber(input) {
+  let v = input.value.replace(/\D/g, '').slice(0, 16);
+  input.value = v.replace(/(.{4})/g, '$1 ').trim();
+  const display = v.padEnd(16, '•').replace(/(.{4})/g, '$1 ').trim();
+  document.getElementById('card-number-display').textContent = display;
+}
+
+function formatCardExpiry(input) {
+  let v = input.value.replace(/\D/g, '').slice(0, 4);
+  if (v.length >= 3) v = v.slice(0, 2) + '/' + v.slice(2);
+  input.value = v;
+  document.getElementById('card-expiry-display').textContent = v || 'MM/AA';
+}
+
+function updateCardDisplay() {
+  const val = document.getElementById('card-holder').value.toUpperCase() || 'NOMBRE APELLIDO';
+  document.getElementById('card-holder-display').textContent = val.slice(0, 22);
+}
+
+function handleCardPayment(e) {
+  if (e) e.preventDefault();
+  const num = document.getElementById('card-number').value.replace(/\s/g, '');
+  const holder = document.getElementById('card-holder').value.trim();
+  const expiry = document.getElementById('card-expiry').value;
+  const cvv = document.getElementById('card-cvv').value;
+
+  let valid = true;
+
+  if (num.length !== 16) {
+    document.getElementById('card-number').classList.add('error');
+    document.getElementById('card-number-error').classList.add('visible');
+    valid = false;
+  } else {
+    document.getElementById('card-number').classList.remove('error');
+    document.getElementById('card-number-error').classList.remove('visible');
+  }
+
+  if (!holder) {
+    document.getElementById('card-holder').classList.add('error');
+    document.getElementById('card-holder-error').classList.add('visible');
+    valid = false;
+  } else {
+    document.getElementById('card-holder').classList.remove('error');
+    document.getElementById('card-holder-error').classList.remove('visible');
+  }
+
+  if (expiry.length < 5) {
+    document.getElementById('card-expiry').classList.add('error');
+    document.getElementById('card-expiry-error').classList.add('visible');
+    valid = false;
+  } else {
+    document.getElementById('card-expiry').classList.remove('error');
+    document.getElementById('card-expiry-error').classList.remove('visible');
+  }
+
+  if (cvv.length < 3) {
+    document.getElementById('card-cvv').classList.add('error');
+    document.getElementById('card-cvv-error').classList.add('visible');
+    valid = false;
+  } else {
+    document.getElementById('card-cvv').classList.remove('error');
+    document.getElementById('card-cvv-error').classList.remove('visible');
+  }
+
+  if (!valid) return;
+  placeOrder();
 }
 
 function placeOrder() {
@@ -2641,6 +3128,84 @@ function staffUpdateOrder(orderId, newStatus) {
 }
 
 // ============================================================
+// SETTINGS
+// ============================================================
+function renderSettings() {
+  const backBtn = document.getElementById('settings-back-btn');
+  const tabBar = document.querySelector('#view-settings .tab-bar');
+  if (currentRole === 'staff') {
+    backBtn.style.visibility = 'visible';
+    tabBar.style.display = 'none';
+  } else {
+    backBtn.style.visibility = 'hidden';
+    tabBar.style.display = 'flex';
+  }
+
+  const avatarEl = document.getElementById('settings-avatar');
+  const nameEl = document.getElementById('settings-profile-name');
+  const emailEl = document.getElementById('settings-profile-email');
+  const roleEl = document.getElementById('settings-profile-role');
+  const editSection = document.getElementById('settings-edit-section');
+  const guestSection = document.getElementById('settings-guest-section');
+  const logoutSection = document.getElementById('settings-logout-section');
+
+  if (currentUser) {
+    const initials = currentUser.name
+      ? currentUser.name.charAt(0).toUpperCase() + (currentUser.lastname ? currentUser.lastname.charAt(0).toUpperCase() : '')
+      : '?';
+    avatarEl.textContent = initials;
+    nameEl.textContent = currentUser.lastname
+      ? currentUser.name + ' ' + currentUser.lastname
+      : currentUser.name;
+    emailEl.textContent = currentUser.email || '';
+    roleEl.textContent = currentUser.role === 'staff' ? '👨‍🍳 Personal' : '🎓 Estudiante';
+
+    document.getElementById('profile-name').value = currentUser.name || '';
+    document.getElementById('profile-email').value = currentUser.email || '';
+
+    editSection.style.display = 'block';
+    guestSection.style.display = 'none';
+    logoutSection.style.display = 'block';
+  } else {
+    avatarEl.textContent = '?';
+    nameEl.textContent = 'Invitado';
+    emailEl.textContent = '';
+    roleEl.textContent = 'Sin cuenta';
+
+    editSection.style.display = 'none';
+    guestSection.style.display = 'block';
+    logoutSection.style.display = 'none';
+  }
+}
+
+function saveProfile(e) {
+  e.preventDefault();
+  if (!currentUser) return;
+
+  const newName = document.getElementById('profile-name').value.trim();
+  const newEmail = document.getElementById('profile-email').value.trim();
+
+  if (!newName) { showToast('Ingresá tu nombre'); return; }
+  if (!newEmail || !newEmail.includes('@')) { showToast('Ingresá un email válido'); return; }
+
+  currentUser.name = newName;
+  currentUser.email = newEmail;
+
+  renderSettings();
+  updateGreeting();
+  showToast('✓ Perfil actualizado');
+}
+
+function logout() {
+  currentUser = null;
+  cart = [];
+  activeOrder = null;
+  updateCartBadge();
+  showToast('Sesión cerrada');
+  navigate('view-splash');
+}
+
+// ============================================================
 // TOAST NOTIFICATION
 // ============================================================
 function showToast(message) {
@@ -2657,6 +3222,7 @@ function showToast(message) {
 // ============================================================
 // INIT
 // ============================================================
+document.querySelector('.role-switcher').style.display = 'none';
 renderHome();
 
 // Auto-refresh tracking view
