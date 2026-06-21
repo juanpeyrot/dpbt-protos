@@ -1,0 +1,1215 @@
+
+<title>UniCafé — Presentación DPBT 2026</title>
+<style>
+:root {
+  --ground:      #053446;
+  --ground-up:   #0a4a60;
+  --text:        #f0f4f5;
+  --accent:      #8bc34a;
+  --accent-dim:  rgba(139,195,74,0.14);
+  --accent-line: rgba(139,195,74,0.35);
+  --muted:       rgba(240,244,245,0.50);
+  --faint:       rgba(240,244,245,0.08);
+  --border:      rgba(240,244,245,0.11);
+  --mono: 'Courier New', Courier, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  background: var(--ground);
+  color: var(--text);
+  font-family: var(--sans);
+  overflow: hidden;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width .3s ease;
+  z-index: 200;
+}
+
+/* ── Slide deck ── */
+#deck { width: 100vw; height: 100vh; position: relative; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 72px 52px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .38s ease;
+}
+.slide.active { opacity: 1; pointer-events: auto; }
+
+/* ── Section tag ── */
+.tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.tag::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: var(--accent-line);
+}
+
+/* ── Headings ── */
+.slide-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: normal;
+  line-height: 1.15;
+  color: var(--text);
+  max-width: 840px;
+}
+.slide-title em { font-style: italic; color: var(--accent); }
+
+.slide-body {
+  font-size: clamp(13px, 1.35vw, 17px);
+  line-height: 1.72;
+  color: var(--muted);
+  max-width: 700px;
+  margin-top: 16px;
+}
+
+/* ── Navigation ── */
+#nav {
+  position: fixed;
+  bottom: 24px; right: 36px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 200;
+}
+#slide-counter {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.nav-btn {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  transition: border-color .18s, background .18s;
+}
+.nav-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+.nav-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nav-btn:disabled { opacity: 0.25; cursor: default; }
+
+/* ══════════════════════════════════
+   SLIDE 1 — COVER
+══════════════════════════════════ */
+#s1 { justify-content: space-between; }
+
+.cover-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+}
+
+.cover-main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.cover-title {
+  font-family: var(--serif);
+  font-size: clamp(72px, 10vw, 128px);
+  font-weight: normal;
+  line-height: 0.92;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.cover-subtitle {
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: rgba(240,244,245,0.65);
+  line-height: 1.45;
+  max-width: 540px;
+  margin-bottom: 44px;
+}
+
+.cover-team {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.cover-person { display: flex; flex-direction: column; gap: 3px; }
+.cover-person-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.cover-person-id { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+
+.cover-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.cover-footer-item {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.cover-footer-item span { color: var(--text); font-size: 11px; }
+
+/* ══════════════════════════════════
+   GENERIC CONTENT AREA
+══════════════════════════════════ */
+.content { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
+
+/* ── Pullquote ── */
+.pullquote {
+  border-left: 3px solid var(--accent);
+  padding: 18px 26px;
+  margin-top: 22px;
+  background: var(--accent-dim);
+  max-width: 720px;
+}
+.pullquote p {
+  font-family: var(--serif);
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* ── Bullet findings ── */
+.finding-list { display: flex; flex-direction: column; gap: 16px; margin-top: 22px; }
+.finding-item { display: flex; gap: 16px; align-items: flex-start; }
+.finding-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.finding-item p { font-size: 14px; color: var(--text); line-height: 1.65; }
+.finding-item p em { color: var(--muted); font-style: normal; font-size: 12px; display: block; margin-top: 2px; }
+
+/* ── Design Thinking phases ── */
+.dt-phases {
+  display: flex;
+  margin-top: 36px;
+  border: 1px solid var(--border);
+}
+.dt-phase {
+  flex: 1;
+  padding: 20px 18px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+}
+.dt-phase:last-child { border-right: none; }
+.dt-phase.active {
+  background: var(--accent-dim);
+  border-bottom: 2px solid var(--accent);
+}
+.dt-phase-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+}
+.dt-phase-name { font-size: 13px; font-weight: 600; color: var(--muted); }
+.dt-phase.active .dt-phase-name { color: var(--accent); }
+.dt-phase-desc { font-size: 11px; color: var(--muted); line-height: 1.5; opacity: 0.7; }
+
+/* ── User table ── */
+.user-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.user-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.user-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--faint);
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.45;
+}
+.user-table tr:last-child td { border-bottom: none; }
+.badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-radius: 2px;
+}
+.badge.staff { background: rgba(77,208,225,0.12); color: #4dd0e1; }
+
+/* ── Quote grid ── */
+.quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+.quote-card {
+  background: var(--faint);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quote-text { font-size: 13px; font-style: italic; line-height: 1.65; color: var(--text); }
+.quote-author { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; }
+
+/* ── Image placeholder ── */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--accent-line);
+  background: rgba(139,195,74,0.03);
+  flex-direction: column;
+  gap: 10px;
+}
+.img-placeholder-icon { font-size: 28px; opacity: 0.3; }
+.img-placeholder-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.img-placeholder-hint { font-size: 11px; color: var(--muted); opacity: 0.55; }
+
+/* ── Observation split ── */
+.obs-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+  margin-top: 16px;
+}
+.obs-detail { display: flex; flex-direction: column; gap: 12px; }
+.obs-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.obs-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.obs-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* ── Theme 2x2 grid ── */
+.theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; flex: 1; }
+.theme-card { padding: 20px 22px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 7px; }
+.theme-name { font-size: 13px; font-weight: 700; color: var(--accent); }
+.theme-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+/* ── Insights ── */
+.insight-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.insight-card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 18px 22px;
+  background: var(--faint);
+  border: 1px solid var(--border);
+}
+.insight-num {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--accent);
+  opacity: 0.22;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+}
+.insight-body { font-size: 13px; line-height: 1.7; color: var(--text); }
+.insight-body strong { color: var(--accent); font-weight: 600; }
+
+/* ── Personas ── */
+.persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; flex: 1; margin-top: 14px; }
+.persona-card { border: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+.persona-img-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--accent-line);
+  background: rgba(139,195,74,0.03);
+  min-height: 130px;
+  flex-direction: column;
+  gap: 8px;
+}
+.persona-info { padding: 14px 18px; display: flex; flex-direction: column; gap: 5px; }
+.persona-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.persona-role { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--accent); }
+.persona-desc { font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 4px; }
+
+/* ── POV list ── */
+.pov-list { display: flex; flex-direction: column; gap: 11px; margin-top: 16px; }
+.pov-item {
+  padding: 13px 20px;
+  border: 1px solid rgba(240,244,245,0.07);
+  border-left: 3px solid rgba(139,195,74,0.25);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.pov-item.sel {
+  border-left-color: var(--accent);
+  color: var(--text);
+  background: var(--faint);
+}
+.pov-user { font-family: var(--mono); font-size: 10px; color: var(--accent); display: block; margin-bottom: 4px; letter-spacing: 0.1em; }
+
+/* ── POV highlight ── */
+.pov-big {
+  border: 1px solid var(--accent);
+  background: var(--accent-dim);
+  padding: 28px 32px;
+  margin-top: 20px;
+  max-width: 800px;
+}
+.pov-big p {
+  font-family: var(--serif);
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.55;
+  color: var(--text);
+  font-style: italic;
+}
+.pov-hmw {
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+/* ── Competitor cards ── */
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+.comp-card { padding: 22px 24px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 9px; }
+.comp-name { font-size: 15px; font-weight: 700; color: var(--text); }
+.comp-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.comp-tag { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; }
+
+.gap-card {
+  margin-top: 14px;
+  padding: 16px 22px;
+  border: 1px dashed var(--accent-line);
+  background: rgba(139,195,74,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.gap-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; color: var(--accent); }
+.gap-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+
+/* ── HMW list ── */
+.hmw-list { display: flex; flex-direction: column; gap: 11px; margin-top: 18px; }
+.hmw-item {
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  line-height: 1.55;
+}
+.hmw-prefix { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--accent); flex-shrink: 0; padding-top: 2px; }
+
+/* ── Feature grid ── */
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+.feature-card { padding: 20px 22px; background: var(--faint); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+.feature-icon { font-size: 22px; }
+.feature-name { font-size: 14px; font-weight: 600; color: var(--text); }
+.feature-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* ── Proto split ── */
+.proto-split { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; flex: 1; margin-top: 16px; }
+.proto-meta { display: flex; flex-direction: column; gap: 12px; }
+.proto-stat { padding: 14px 18px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 4px; }
+.proto-stat-val { font-family: var(--serif); font-size: 28px; color: var(--accent); line-height: 1; }
+.proto-stat-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--muted); }
+
+/* ── Test results ── */
+.test-split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; margin-top: 14px; }
+.test-results { display: flex; flex-direction: column; gap: 12px; }
+.test-item {
+  padding: 13px 18px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.55;
+}
+.test-item strong { color: var(--accent); }
+
+/* ── Next steps ── */
+.steps-list { display: flex; flex-direction: column; gap: 14px; margin-top: 22px; }
+.step-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 18px 24px;
+  border: 1px solid var(--border);
+}
+.step-num { font-family: var(--mono); font-size: 22px; color: var(--accent); opacity: 0.3; flex-shrink: 0; width: 30px; }
+.step-text { font-size: 15px; color: var(--text); line-height: 1.5; }
+.step-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+/* ── Thank you ── */
+#s20 { align-items: center; justify-content: center; text-align: center; }
+.ty-word {
+  font-family: var(--serif);
+  font-size: clamp(56px, 8.5vw, 108px);
+  font-weight: normal;
+  line-height: 1;
+  color: var(--text);
+}
+.ty-word em { color: var(--accent); font-style: italic; }
+.ty-divider { width: 64px; height: 1px; background: var(--accent-line); margin: 24px auto; }
+.ty-sub { font-size: 16px; color: var(--muted); }
+.ty-team { margin-top: 32px; display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+.ty-person { font-size: 13px; color: var(--muted); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slide, #progress-bar { transition: none; }
+}
+</style>
+
+<div id="progress-bar"></div>
+
+<div id="deck">
+
+  <!-- ══ SLIDE 1 — CARÁTULA ══ -->
+  <section class="slide active" id="s1">
+    <div class="cover-eyebrow">UNIVERSIDAD ORT URUGUAY · FACULTAD DE INGENIERÍA · DPBT 2026</div>
+
+    <div class="cover-main">
+      <div class="cover-title">UniCafé</div>
+      <div class="cover-subtitle">Diseñando la experiencia de compra<br>en la cafetería universitaria</div>
+      <div class="cover-team">
+        <div class="cover-person">
+          <div class="cover-person-name">Guillermo Diotti</div>
+          <div class="cover-person-id">285578</div>
+        </div>
+        <div class="cover-person">
+          <div class="cover-person-name">Juan Peyrot</div>
+          <div class="cover-person-id">275076</div>
+        </div>
+        <div class="cover-person">
+          <div class="cover-person-name">Nicolás Toscano</div>
+          <div class="cover-person-id">220264</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-footer">
+      <div class="cover-footer-item">
+        DOCENTE<br><span>Diego Femenías</span>
+      </div>
+      <div class="cover-footer-item" style="text-align:right">
+        DISEÑO Y PENSAMIENTO<br><span>Basado en Design Thinking</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 2 — EL DESAFÍO ══ -->
+  <section class="slide" id="s2">
+    <div class="tag">DESAFÍO</div>
+    <h2 class="slide-title">Comer en la universidad<br>no debería ser <em>un problema</em></h2>
+
+    <div class="content">
+      <p class="slide-body">
+        El tiempo entre clases es corto. La cafetería, en cambio, no: filas largas, pedidos confusos, esperas impredecibles.
+        Los estudiantes llegan tarde, saltean comidas o directamente evitan ir.
+      </p>
+
+      <div class="finding-list">
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>Estudiantes pierden entre 15 y 25 minutos en horas pico, sin saber cuánto falta para ser atendidos.<em>Incertidumbre que paraliza la decisión de ir o no ir.</em></p>
+        </div>
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>El personal no conoce la demanda hasta que los clientes ya están parados en el mostrador.<em>Sin anticipación, no hay preparación posible.</em></p>
+        </div>
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>Los pedidos se anotan a mano y se repiten en voz alta, generando errores en cocina.<em>Un flujo análogo en un entorno que ya tiene todo digital.</em></p>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        <p>"¿Cómo podemos mejorar la experiencia de compra en la cafetería universitaria?"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 3 — INVESTIGACIÓN PRELIMINAR ══ -->
+  <section class="slide" id="s3">
+    <div class="tag">CONTEXTO</div>
+    <h2 class="slide-title">Lo que ya sabíamos —<br>y lo que <em>confirmamos</em></h2>
+
+    <div class="content">
+      <p class="slide-body">Antes de hablar con usuarios, revisamos investigaciones existentes sobre servicios de cafetería universitaria y relevamos el contexto local.</p>
+
+      <div class="finding-list">
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>El tiempo de espera promedio en hora pico supera los <strong style="color:var(--accent)">20 minutos</strong>, con picos de hasta 35.<em>Fuente: estudio de cafeterías universitarias en México (referencia del proyecto).</em></p>
+        </div>
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>El cuello de botella está en <strong style="color:var(--accent)">caja</strong>, no en la preparación de los alimentos.<em>Donde el sistema se quiebra es en la captura del pedido, no en su ejecución.</em></p>
+        </div>
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>Más del <strong style="color:var(--accent)">60 %</strong> de los estudiantes usaría su celular para ordenar anticipadamente si pudiera.<em>Intención de uso alta; la tecnología no es la barrera.</em></p>
+        </div>
+        <div class="finding-item">
+          <div class="finding-dot"></div>
+          <p>El menú no se actualiza durante el día: los clientes descubren que algo no hay cuando ya están en caja.<em>Fricción evitable que genera frustración y abandono.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 4 — METODOLOGÍA ══ -->
+  <section class="slide" id="s4">
+    <div class="tag">PROCESO</div>
+    <h2 class="slide-title">Design Thinking<br>como marco de <em>trabajo</em></h2>
+
+    <div class="content">
+      <p class="slide-body">Seguimos las cinco etapas del proceso de Design Thinking, con énfasis en la comprensión profunda del usuario antes de definir cualquier solución.</p>
+
+      <div class="dt-phases">
+        <div class="dt-phase active">
+          <div class="dt-phase-num">01</div>
+          <div class="dt-phase-name">Empatizar</div>
+          <div class="dt-phase-desc">Entrevistas + observación en campo</div>
+        </div>
+        <div class="dt-phase active">
+          <div class="dt-phase-num">02</div>
+          <div class="dt-phase-name">Definir</div>
+          <div class="dt-phase-desc">Insights, personas, POVs</div>
+        </div>
+        <div class="dt-phase active">
+          <div class="dt-phase-num">03</div>
+          <div class="dt-phase-name">Idear</div>
+          <div class="dt-phase-desc">HMW, brainstorming de soluciones</div>
+        </div>
+        <div class="dt-phase active">
+          <div class="dt-phase-num">04</div>
+          <div class="dt-phase-name">Prototipar</div>
+          <div class="dt-phase-desc">Pretotipo + alta fidelidad</div>
+        </div>
+        <div class="dt-phase active">
+          <div class="dt-phase-num">05</div>
+          <div class="dt-phase-name">Testear</div>
+          <div class="dt-phase-desc">Pruebas con usuarios reales</div>
+        </div>
+      </div>
+
+      <p class="slide-body" style="margin-top:28px">
+        El proceso no es lineal: los aprendizajes de cada etapa retroalimentan las anteriores.
+        En esta presentación mostramos el recorrido completo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 5 — FASE DE EMPATÍA ══ -->
+  <section class="slide" id="s5">
+    <div class="tag">EMPATÍA</div>
+    <h2 class="slide-title">Entender antes<br>de <em>diseñar</em></h2>
+
+    <div class="content">
+      <p class="slide-body">Realizamos dos tipos de actividades para comprender la experiencia desde adentro: conversaciones en profundidad y observación directa del entorno.</p>
+
+      <div class="theme-grid" style="margin-top:28px">
+        <div class="theme-card">
+          <div class="theme-name">Entrevistas en profundidad</div>
+          <div class="theme-desc">5 sesiones individuales con usuarios reales del servicio — 3 estudiantes y 2 miembros del personal de cafetería. Duración: 20–35 minutos cada una.</div>
+        </div>
+        <div class="theme-card">
+          <div class="theme-name">Observación no participante</div>
+          <div class="theme-desc">2 sesiones en la cafetería durante horario pico (12:00–14:00). Observamos el flujo de servicio sin intervenir, registrando tiempos y puntos de quiebre.</div>
+        </div>
+        <div class="theme-card">
+          <div class="theme-name">Guión de entrevista</div>
+          <div class="theme-desc">Preguntas abiertas orientadas a rutinas, emociones y workarounds. No preguntamos "¿qué quieren?" sino "¿qué hacen cuando algo no funciona?"</div>
+        </div>
+        <div class="theme-card">
+          <div class="theme-name">Registro y análisis</div>
+          <div class="theme-desc">Transcripción de entrevistas, mapa de afinidad en Miro y agrupación por temas emergentes para la fase de definición.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 6 — USUARIOS ENTREVISTADOS ══ -->
+  <section class="slide" id="s6">
+    <div class="tag">EMPATÍA</div>
+    <h2 class="slide-title">Con quién <em>hablamos</em></h2>
+
+    <div class="content">
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Perfil</th>
+            <th>Contexto clave</th>
+            <th>Rol</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rodolfo</strong></td>
+            <td>Estudiante, Ingeniería</td>
+            <td>Va a la cafetería 3 veces por semana. Poca tolerancia a la espera, prioriza previsibilidad.</td>
+            <td><span class="badge">Estudiante</span></td>
+          </tr>
+          <tr>
+            <td><strong>Franco</strong></td>
+            <td>Estudiante, Diseño</td>
+            <td>Entre clases tiene 15 minutos. Si la fila parece larga, se va sin comer.</td>
+            <td><span class="badge">Estudiante</span></td>
+          </tr>
+          <tr>
+            <td><strong>Marcos</strong></td>
+            <td>Estudiante, Empresariales</td>
+            <td>Horario cargado. Llegó tarde a clase por la fila del mediodía más de una vez.</td>
+            <td><span class="badge">Estudiante</span></td>
+          </tr>
+          <tr>
+            <td><strong>Gabriela</strong></td>
+            <td>Personal de cafetería</td>
+            <td>7 años de experiencia. Gestiona pedidos manualmente. Conoce el pico pero no puede anticiparse.</td>
+            <td><span class="badge staff">Personal</span></td>
+          </tr>
+          <tr>
+            <td><strong>Maximiliano</strong></td>
+            <td>Personal de caja</td>
+            <td>Saturado en horas pico. Comete errores por volumen y ruido. Pide ayuda y no llega.</td>
+            <td><span class="badge staff">Personal</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="slide-body" style="margin-top:18px">Criterio de selección: usuarios con distintos grados de exposición al servicio — desde quien va todos los días hasta quien lo evita activamente.</p>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 7 — FRAGMENTOS DESTACADOS ══ -->
+  <section class="slide" id="s7">
+    <div class="tag">EMPATÍA</div>
+    <h2 class="slide-title">Lo que <em>escuchamos</em></h2>
+
+    <div class="content">
+      <p class="slide-body">Estos fragmentos no son los más dramáticos — son los más representativos. Cada uno aparece en al menos dos entrevistas distintas.</p>
+
+      <div class="quote-grid">
+        <div class="quote-card">
+          <p class="quote-text">"A veces prefiero no comer antes que hacer cola y llegar tarde a la siguiente clase."</p>
+          <div class="quote-author">FRANCO · ESTUDIANTE</div>
+        </div>
+        <div class="quote-card">
+          <p class="quote-text">"No sé cuánta gente va a venir. Me entero cuando ya están todos parados en la puerta."</p>
+          <div class="quote-author">GABRIELA · PERSONAL</div>
+        </div>
+        <div class="quote-card">
+          <p class="quote-text">"Llegué tarde dos veces esta semana por la fila del mediodía. Mi profesor ya me preguntó qué pasaba."</p>
+          <div class="quote-author">MARCOS · ESTUDIANTE</div>
+        </div>
+        <div class="quote-card">
+          <p class="quote-text">"Me equivoco seguido. Con el ruido y todos hablando a la vez, no escucho bien el pedido."</p>
+          <div class="quote-author">MAXIMILIANO · PERSONAL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 8 — OBSERVACIÓN [IMAGE PLACEHOLDER] ══ -->
+  <section class="slide" id="s8">
+    <div class="tag">EMPATÍA</div>
+    <h2 class="slide-title">Lo que <em>vimos</em></h2>
+
+    <div class="content">
+      <div class="obs-split">
+        <div class="img-placeholder" style="min-height:0">
+          <div class="img-placeholder-icon">📸</div>
+          <div class="img-placeholder-label">Fotos de la sesión de observación</div>
+          <div class="img-placeholder-hint">Insertar fotografías del registro en campo</div>
+        </div>
+
+        <div class="obs-detail">
+          <div class="obs-meta">2 SESIONES · 45 MIN C/U · 12:00–14:00</div>
+          <div class="obs-item">
+            <div class="obs-num">01</div>
+            <p>El flujo se quiebra en <strong style="color:var(--text)">caja</strong>: los clientes esperan mientras el cajero anota el pedido a mano en una hoja impresa.</p>
+          </div>
+          <div class="obs-item">
+            <div class="obs-num">02</div>
+            <p>Los pedidos se repiten en voz alta hacia cocina, generando <strong style="color:var(--text)">confusión</strong> cuando hay más de tres clientes simultáneos.</p>
+          </div>
+          <div class="obs-item">
+            <div class="obs-num">03</div>
+            <p>La pizarra de menú <strong style="color:var(--text)">no se actualiza</strong> durante el día: tres clientes preguntaron por platos que ya no había.</p>
+          </div>
+          <div class="obs-item">
+            <div class="obs-num">04</div>
+            <p>Los estudiantes revisan el celular <strong style="color:var(--text)">mientras esperan en fila</strong>. El tiempo de espera ya existe — se puede aprovechar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 9 — TEMAS EMERGENTES ══ -->
+  <section class="slide" id="s9">
+    <div class="tag">DEFINICIÓN</div>
+    <h2 class="slide-title">Patrones que aparecieron<br><em>una y otra vez</em></h2>
+
+    <div class="content">
+      <p class="slide-body">Del mapa de afinidad surgieron cuatro grandes temas que cruzan todas las entrevistas y la observación.</p>
+
+      <div class="theme-grid">
+        <div class="theme-card">
+          <div class="theme-name">Incertidumbre de tiempo</div>
+          <div class="theme-desc">Nadie sabe cuánto va a esperar. Sin esa información, la decisión de ir o no ir se vuelve un riesgo que muchos no toman.</div>
+        </div>
+        <div class="theme-card">
+          <div class="theme-name">Comunicación fragmentada</div>
+          <div class="theme-desc">El pedido pasa por tres instancias (cliente, caja, cocina) en voz alta y a mano. Cada transmisión es una oportunidad de error.</div>
+        </div>
+        <div class="theme-card">
+          <div class="theme-name">Autonomía del estudiante</div>
+          <div class="theme-desc">Los estudiantes quieren decidir y actuar sin depender de que alguien los atienda. La fricción está en el contacto, no en la espera per se.</div>
+        </div>
+        <div class="theme-card">
+          <div class="theme-name">Carga operativa del personal</div>
+          <div class="theme-desc">Gabriela y Maximiliano saben exactamente qué va a pasar en el pico — pero no tienen herramientas para anticiparse. El conocimiento existe; el sistema no lo aprovecha.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 10 — INSIGHTS ══ -->
+  <section class="slide" id="s10">
+    <div class="tag">DEFINICIÓN</div>
+    <h2 class="slide-title">Lo que <em>realmente</em> está pasando</h2>
+
+    <div class="content">
+      <div class="insight-stack">
+        <div class="insight-card">
+          <div class="insight-num">1</div>
+          <div class="insight-body">
+            <strong>La fila no es el problema — es el síntoma.</strong> El problema real es la falta de visibilidad: el cliente no sabe cuánto esperar, el personal no sabe qué va a pedir. Sin información compartida, el sistema colapsa en el pico.
+          </div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-num">2</div>
+          <div class="insight-body">
+            <strong>El personal tiene el expertise; le faltan las herramientas.</strong> Gabriela puede predecir qué días son los más demandantes y qué platos se agotan primero. Ese conocimiento vale — y hoy no se captura en ningún sistema.
+          </div>
+        </div>
+        <div class="insight-card">
+          <div class="insight-num">3</div>
+          <div class="insight-body">
+            <strong>El celular ya está en la mano.</strong> Los estudiantes usan el teléfono mientras esperan en fila. Ese tiempo de espera ya existe — la oportunidad es convertirlo en tiempo de pedido antes de llegar.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 11 — PERSONAS [IMAGE PLACEHOLDER] ══ -->
+  <section class="slide" id="s11">
+    <div class="tag">DEFINICIÓN</div>
+    <h2 class="slide-title">Quiénes son nuestros <em>usuarios</em></h2>
+
+    <div class="content" style="flex:1">
+      <div class="persona-grid">
+        <div class="persona-card">
+          <div class="persona-img-area">
+            <div class="img-placeholder-icon">🖼️</div>
+            <div class="img-placeholder-label">Insertar persona</div>
+            <div class="img-placeholder-hint">Journey map o ilustración</div>
+          </div>
+          <div class="persona-info">
+            <div class="persona-name">Valentina, 22 años</div>
+            <div class="persona-role">ESTUDIANTE · INGENIERÍA</div>
+            <div class="persona-desc">Va a la cafetería casi todos los días pero evita el horario pico. Cuando decide ir, necesita saber con precisión cuánto va a tardar. La incertidumbre la frustra más que la espera en sí.</div>
+          </div>
+        </div>
+        <div class="persona-card">
+          <div class="persona-img-area">
+            <div class="img-placeholder-icon">🖼️</div>
+            <div class="img-placeholder-label">Insertar persona</div>
+            <div class="img-placeholder-hint">Journey map o ilustración</div>
+          </div>
+          <div class="persona-info">
+            <div class="persona-name">Gabriel, 38 años</div>
+            <div class="persona-role">PERSONAL DE CAFETERÍA</div>
+            <div class="persona-desc">Lleva 8 años en el servicio. Conoce los ritmos mejor que nadie, pero gestiona todo de memoria y en papel. Quiere anticiparse al pico antes de que explote, no reaccionar cuando ya es tarde.</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:var(--muted);margin-top:12px">BASADO EN SÍNTESIS DE 5 ENTREVISTAS Y 2 SESIONES DE OBSERVACIÓN</p>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 12 — POVs ══ -->
+  <section class="slide" id="s12">
+    <div class="tag">DEFINICIÓN</div>
+    <h2 class="slide-title">Reformulando el problema<br>desde el <em>usuario</em></h2>
+
+    <div class="content">
+      <p class="slide-body">Construimos cuatro puntos de vista en formato <em style="color:var(--accent);font-style:italic">usuario · necesita · porque</em> para convertir los hallazgos en problemas accionables.</p>
+
+      <div class="pov-list">
+        <div class="pov-item">
+          <span class="pov-user">FRANCO · ESTUDIANTE</span>
+          Necesita <strong style="color:var(--text)">saber cuánto va a esperar</strong> antes de decidir si va a la cafetería, porque sin esa información prefiere saltear la comida antes que arriesgar llegar tarde a clase.
+        </div>
+        <div class="pov-item">
+          <span class="pov-user">MARCOS · ESTUDIANTE</span>
+          Necesita <strong style="color:var(--text)">poder ordenar antes de llegar</strong> al mostrador, porque entre clase y clase tiene 10 minutos y el sistema actual requiere que esté físicamente presente para iniciar el pedido.
+        </div>
+        <div class="pov-item">
+          <span class="pov-user">GABRIELA · PERSONAL</span>
+          Necesita <strong style="color:var(--text)">ver la demanda con anticipación</strong>, porque sin esa visibilidad no puede preparar el servicio para el pico y reacciona tarde cuando ya hay cola.
+        </div>
+        <div class="pov-item">
+          <span class="pov-user">MAXIMILIANO · PERSONAL</span>
+          Necesita <strong style="color:var(--text)">reducir la carga verbal en caja</strong>, porque tomar pedidos a viva voz en un entorno ruidoso genera errores frecuentes y lo satura durante las horas de mayor demanda.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 13 — POV SELECCIONADO ══ -->
+  <section class="slide" id="s13">
+    <div class="tag">DEFINICIÓN</div>
+    <h2 class="slide-title">El punto de vista<br>que <em>guía el diseño</em></h2>
+
+    <div class="content">
+      <p class="slide-body">De los cuatro POVs, elegimos el que mejor sintetiza la tensión central: la incertidumbre como barrera de uso, no la espera en sí.</p>
+
+      <div class="pov-big">
+        <p>"Un estudiante universitario necesita poder <strong style="color:var(--accent);font-style:normal">anticipar y gestionar su tiempo</strong> en la cafetería porque la incertidumbre sobre la espera lo lleva a evitar el servicio por completo."</p>
+      </div>
+
+      <div class="pov-hmw" style="margin-top:20px">¿POR QUÉ ESTE Y NO OTRO?</div>
+      <p class="slide-body" style="max-width:720px">
+        Resuelve el lado estudiantil y el operativo a la vez: si el estudiante puede ordenar con antelación,
+        el personal recibe la demanda antes del pico. Un solo vector de intervención, dos problemas atacados.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 14 — COMPETIDORES ══ -->
+  <section class="slide" id="s14">
+    <div class="tag">CONTEXTO</div>
+    <h2 class="slide-title">Qué están haciendo<br>los <em>demás</em></h2>
+
+    <div class="content">
+      <div class="comp-grid">
+        <div class="comp-card">
+          <div class="comp-name">McDonald's App</div>
+          <div class="comp-tag">FAST FOOD · ORDEN ANTICIPADA</div>
+          <div class="comp-desc">Orden anticipada desde el celular con seguimiento en tiempo real del estado del pedido. Referente en UX de quick service. Funciona porque el menú es fijo y el precio no varía.</div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-name">Starbucks App</div>
+          <div class="comp-tag">CAFÉ · PEDIDO MÓVIL + FIDELIZACIÓN</div>
+          <div class="comp-desc">Mobile order & pay con integración a programa de lealtad. Caso de éxito en entornos con mucha repetición de pedidos. Ha reducido el tiempo en mostrador en un 20 % en locales habilitados.</div>
+        </div>
+      </div>
+
+      <div class="gap-card">
+        <div class="gap-label">BRECHA DE OPORTUNIDAD</div>
+        <div class="gap-text">
+          Ninguna solución existente está pensada para el contexto universitario: menú cambiante según el día,
+          usuarios sin cuenta bancaria establecida, pago en efectivo como opción necesaria, y un personal con carga operativa
+          altísima sin sistema de soporte. <strong style="color:var(--accent)">El espacio está vacante.</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 15 — IDEACIÓN / HMW ══ -->
+  <section class="slide" id="s15">
+    <div class="tag">IDEACIÓN</div>
+    <h2 class="slide-title">¿Cómo podríamos <em>resolverlo</em>?</h2>
+
+    <div class="content">
+      <p class="slide-body">Traducimos el POV en preguntas "How Might We" para abrir el espacio de soluciones sin comprometernos todavía con ninguna implementación.</p>
+
+      <div class="hmw-list">
+        <div class="hmw-item">
+          <div class="hmw-prefix">HMW</div>
+          <p>¿Cómo podríamos permitir que el estudiante <strong style="color:var(--text)">ordene antes de llegar al mostrador</strong> sin necesitar una cuenta bancaria?</p>
+        </div>
+        <div class="hmw-item">
+          <div class="hmw-prefix">HMW</div>
+          <p>¿Cómo podríamos darle al personal <strong style="color:var(--text)">visibilidad de la demanda</strong> antes de que el pico llegue?</p>
+        </div>
+        <div class="hmw-item">
+          <div class="hmw-prefix">HMW</div>
+          <p>¿Cómo podríamos <strong style="color:var(--text)">reducir la fricción en caja</strong> sin eliminar el pago en efectivo como opción?</p>
+        </div>
+        <div class="hmw-item">
+          <div class="hmw-prefix">HMW</div>
+          <p>¿Cómo podríamos mostrar <strong style="color:var(--text)">disponibilidad real del menú</strong> sin requerir que el personal lo actualice manualmente?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 16 — CONCEPTO DE SOLUCIÓN ══ -->
+  <section class="slide" id="s16">
+    <div class="tag">SOLUCIÓN</div>
+    <h2 class="slide-title">UniCafé —<br><em>Pedí antes, comé tranquilo</em></h2>
+
+    <div class="content">
+      <p class="slide-body">
+        Una app móvil para estudiantes y personal de cafetería universitaria. Dos interfaces,
+        un flujo integrado: el estudiante ordena desde el celular, el personal recibe el pedido
+        antes de que llegue al mostrador.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <div class="feature-name">Pedido anticipado</div>
+          <div class="feature-desc">El estudiante elige del menú del día y confirma el pedido desde el celular, antes de llegar a la cafetería.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <div class="feature-name">Seguimiento en tiempo real</div>
+          <div class="feature-desc">Estado del pedido actualizado en vivo: recibido, en preparación, listo para retirar.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <div class="feature-name">Múltiples métodos de pago</div>
+          <div class="feature-desc">Pago en mostrador (efectivo), débito o crédito — sin forzar al usuario a tener tarjeta.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-name">Panel de gestión</div>
+          <div class="feature-desc">El personal ve todos los pedidos entrantes en tiempo real y puede anticipar la preparación antes del pico.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 17 — PROTOTIPO [IMAGE PLACEHOLDER] ══ -->
+  <section class="slide" id="s17">
+    <div class="tag">PROTOTIPO</div>
+    <h2 class="slide-title">De la idea<br>a la <em>pantalla</em></h2>
+
+    <div class="content">
+      <div class="proto-split">
+        <div class="img-placeholder" style="min-height:0">
+          <div class="img-placeholder-icon">📱</div>
+          <div class="img-placeholder-label">Pantallas del prototipo de alta fidelidad</div>
+          <div class="img-placeholder-hint">Insertar capturas del prototipo en Figma / index.html</div>
+        </div>
+
+        <div class="proto-meta">
+          <div class="proto-stat">
+            <div class="proto-stat-val">2</div>
+            <div class="proto-stat-label">ITERACIONES DE PROTOTIPO</div>
+          </div>
+          <div class="proto-stat">
+            <div class="proto-stat-val">2</div>
+            <div class="proto-stat-label">FLUJOS PRINCIPALES</div>
+          </div>
+          <div style="padding:14px 18px;border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6">
+            <div style="color:var(--accent);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;margin-bottom:6px">FLUJOS</div>
+            Vista estudiante — home, menú, carrito, pago, seguimiento<br><br>
+            Vista personal — panel de pedidos, gestión de estado
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 18 — PRUEBAS DE USUARIO [IMAGE PLACEHOLDER] ══ -->
+  <section class="slide" id="s18">
+    <div class="tag">TESTEO</div>
+    <h2 class="slide-title">Lo que aprendimos<br>al ponerlo en <em>manos reales</em></h2>
+
+    <div class="content">
+      <div class="test-split">
+        <div>
+          <div class="img-placeholder" style="min-height:180px">
+            <div class="img-placeholder-icon">🧪</div>
+            <div class="img-placeholder-label">Fotos de sesiones de prueba</div>
+            <div class="img-placeholder-hint">Insertar imágenes del testing con usuarios</div>
+          </div>
+        </div>
+
+        <div class="test-results">
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--muted);margin-bottom:4px">HALLAZGOS PRINCIPALES</div>
+          <div class="test-item">
+            El flujo de pedido se completó <strong>sin asistencia</strong> en la mayoría de las pruebas — la navegación fue intuitiva desde el primer intento.
+          </div>
+          <div class="test-item">
+            El punto de mayor confusión fue la <strong>confirmación del método de pago</strong> — los usuarios buscaban un resumen antes de confirmar.
+          </div>
+          <div class="test-item">
+            El personal destacó el <strong>panel de pedidos</strong> como la funcionalidad más valiosa: "Finalmente puedo ver qué viene antes de que llegue."
+          </div>
+          <div class="test-item">
+            Los estudiantes valoraron el <strong>seguimiento en tiempo real</strong> sobre cualquier otra función — reduce la ansiedad de la espera sin eliminarla.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 19 — PRÓXIMOS PASOS ══ -->
+  <section class="slide" id="s19">
+    <div class="tag">FUTURO</div>
+    <h2 class="slide-title">Qué viene<br><em>después</em></h2>
+
+    <div class="content">
+      <p class="slide-body">El prototipo valida el concepto. Los próximos pasos son técnicos y de adopción: hay que aterrizarlo en la infraestructura real de ORT.</p>
+
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-text">Integración con medios de pago locales</div>
+            <div class="step-sub">Mercado Pago, BROU o Abitab — sin depender de tarjeta bancaria como requisito.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-text">Piloto acotado en una cafetería de ORT</div>
+            <div class="step-sub">Validar el flujo completo en condiciones reales antes de escalar.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-text">Expansión a otros puntos de venta del campus</div>
+            <div class="step-sub">Una vez validado el modelo, replicar la experiencia en otros servicios (fotocopias, librería, etc.).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 20 — MUCHAS GRACIAS ══ -->
+  <section class="slide" id="s20">
+    <div class="ty-word">Muchas<br><em>gracias.</em></div>
+    <div class="ty-divider"></div>
+    <div class="ty-sub">Preguntas y comentarios son bienvenidos.</div>
+    <div class="ty-team">
+      <div class="ty-person">Guillermo Diotti · 285578</div>
+      <div class="ty-person">Juan Peyrot · 275076</div>
+      <div class="ty-person">Nicolás Toscano · 220264</div>
+    </div>
+    <div style="margin-top:20px;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;color:var(--muted)">DOCENTE: DIEGO FEMENÍAS · DPBT 2026 · ORT URUGUAY</div>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div id="nav">
+  <span id="slide-counter"></span>
+  <button class="nav-btn" id="prev-btn" aria-label="Diapositiva anterior" onclick="go(-1)">←</button>
+  <button class="nav-btn" id="next-btn" aria-label="Diapositiva siguiente" onclick="go(1)">→</button>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let current = 0;
+
+  function show(n) {
+    slides[current].classList.remove('active');
+    current = Math.max(0, Math.min(total - 1, n));
+    slides[current].classList.add('active');
+
+    const pct = ((current + 1) / total) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('slide-counter').textContent =
+      String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    document.getElementById('prev-btn').disabled = current === 0;
+    document.getElementById('next-btn').disabled = current === total - 1;
+  }
+
+  window.go = function (dir) { show(current + dir); };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault();
+      show(current + 1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      show(current - 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      show(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      show(total - 1);
+    }
+  });
+
+  show(0);
+})();
+</script>
