@@ -503,8 +503,82 @@ html, body {
 .step-text { font-size: 15px; color: var(--text); line-height: 1.5; }
 .step-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
 
+/* ── Phone frame strip (hifi prototype) ── */
+.phone-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  flex: 1;
+  align-items: flex-start;
+  margin-top: 16px;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-line) transparent;
+}
+.phone-frame {
+  flex-shrink: 0;
+  width: 112px;
+  background: #07202e;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  padding: 7px 5px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.phone-frame img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+.phone-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0.65;
+  text-transform: uppercase;
+}
+
+/* ── Pretotipo photo grid ── */
+.pre-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  flex: 1;
+  margin-top: 14px;
+  min-height: 0;
+}
+.pre-item {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.02);
+  min-height: 0;
+}
+.pre-item img {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  object-fit: contain;
+  object-position: top;
+  display: block;
+}
+.pre-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  padding: 7px 12px;
+  border-top: 1px solid var(--border);
+  background: var(--faint);
+}
+
 /* ── Thank you ── */
-#s20 { align-items: center; justify-content: center; text-align: center; }
+#s21 { align-items: center; justify-content: center; text-align: center; }
 .ty-word {
   font-family: var(--serif);
   font-size: clamp(56px, 8.5vw, 108px);
@@ -1051,40 +1125,84 @@ html, body {
     </div>
   </section>
 
-  <!-- ══ SLIDE 17 — PROTOTIPO [IMAGE PLACEHOLDER] ══ -->
+  <!-- ══ SLIDE 17 — PRETOTIPO ══ -->
   <section class="slide" id="s17">
     <div class="tag">PROTOTIPO</div>
-    <h2 class="slide-title">De la idea<br>a la <em>pantalla</em></h2>
+    <h2 class="slide-title">Primero en papel —<br>el <em>pretotipo</em></h2>
 
     <div class="content">
-      <div class="proto-split">
-        <div class="img-placeholder" style="min-height:0">
-          <div class="img-placeholder-icon">📱</div>
-          <div class="img-placeholder-label">Pantallas del prototipo de alta fidelidad</div>
-          <div class="img-placeholder-hint">Insertar capturas del prototipo en Figma / index.html</div>
-        </div>
+      <p class="slide-body">Antes de digitalizarlo, dibujamos las pantallas principales a mano para validar la estructura y el flujo sin invertir tiempo en código.</p>
 
-        <div class="proto-meta">
-          <div class="proto-stat">
-            <div class="proto-stat-val">2</div>
-            <div class="proto-stat-label">ITERACIONES DE PROTOTIPO</div>
-          </div>
-          <div class="proto-stat">
-            <div class="proto-stat-val">2</div>
-            <div class="proto-stat-label">FLUJOS PRINCIPALES</div>
-          </div>
-          <div style="padding:14px 18px;border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6">
-            <div style="color:var(--accent);font-family:var(--mono);font-size:10px;letter-spacing:0.1em;margin-bottom:6px">FLUJOS</div>
-            Vista estudiante — home, menú, carrito, pago, seguimiento<br><br>
-            Vista personal — panel de pedidos, gestión de estado
-          </div>
+      <div class="pre-grid">
+        <div class="pre-item">
+          <img src="fotos/pretotipos/login.jpeg" alt="Pretotipo: Login" />
+          <div class="pre-label">Log in</div>
+        </div>
+        <div class="pre-item">
+          <img src="fotos/pretotipos/menu%20principal.jpeg" alt="Pretotipo: Menú principal" />
+          <div class="pre-label">Menú principal</div>
+        </div>
+        <div class="pre-item">
+          <img src="fotos/pretotipos/carrito.jpeg" alt="Pretotipo: Carrito" />
+          <div class="pre-label">Carrito</div>
+        </div>
+        <div class="pre-item">
+          <img src="fotos/pretotipos/panel%20personal.jpeg" alt="Pretotipo: Panel personal" />
+          <div class="pre-label">Panel personal</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══ SLIDE 18 — PRUEBAS DE USUARIO [IMAGE PLACEHOLDER] ══ -->
+  <!-- ══ SLIDE 18 — PROTOTIPO ALTA FIDELIDAD ══ -->
   <section class="slide" id="s18">
+    <div class="tag">PROTOTIPO</div>
+    <h2 class="slide-title">Alta fidelidad —<br><em>9 pantallas, 2 flujos</em></h2>
+
+    <div class="content">
+      <div class="phone-strip">
+        <div class="phone-frame">
+          <img src="fotos/prototipos/log%20in.png" alt="Login" />
+          <div class="phone-label">Log in</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/menu%20principal.png" alt="Menú" />
+          <div class="phone-label">Menú</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/detalle%20comida.png" alt="Detalle" />
+          <div class="phone-label">Detalle</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/carrito.png" alt="Carrito" />
+          <div class="phone-label">Carrito</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/pago.png" alt="Pago" />
+          <div class="phone-label">Pago</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/datos%20tarjeta.png" alt="Tarjeta" />
+          <div class="phone-label">Tarjeta</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/pedido%20confirmado.png" alt="Confirmado" />
+          <div class="phone-label">Confirmado</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/seguimiento%20de%20pedido.png" alt="Seguimiento" />
+          <div class="phone-label">Seguimiento</div>
+        </div>
+        <div class="phone-frame">
+          <img src="fotos/prototipos/panel%20personal.png" alt="Panel" />
+          <div class="phone-label">Panel personal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SLIDE 19 — PRUEBAS DE USUARIO [IMAGE PLACEHOLDER] ══ -->
+  <section class="slide" id="s19">
     <div class="tag">TESTEO</div>
     <h2 class="slide-title">Lo que aprendimos<br>al ponerlo en <em>manos reales</em></h2>
 
@@ -1117,8 +1235,8 @@ html, body {
     </div>
   </section>
 
-  <!-- ══ SLIDE 19 — PRÓXIMOS PASOS ══ -->
-  <section class="slide" id="s19">
+  <!-- ══ SLIDE 20 — PRÓXIMOS PASOS ══ -->
+  <section class="slide" id="s20">
     <div class="tag">FUTURO</div>
     <h2 class="slide-title">Qué viene<br><em>después</em></h2>
 
@@ -1151,8 +1269,8 @@ html, body {
     </div>
   </section>
 
-  <!-- ══ SLIDE 20 — MUCHAS GRACIAS ══ -->
-  <section class="slide" id="s20">
+  <!-- ══ SLIDE 21 — MUCHAS GRACIAS ══ -->
+  <section class="slide" id="s21">
     <div class="ty-word">Muchas<br><em>gracias.</em></div>
     <div class="ty-divider"></div>
     <div class="ty-sub">Preguntas y comentarios son bienvenidos.</div>
