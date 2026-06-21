@@ -506,18 +506,16 @@ html, body {
 /* ── Phone frame strip (hifi prototype) ── */
 .phone-strip {
   display: flex;
-  gap: 12px;
-  overflow-x: auto;
+  gap: 10px;
   flex: 1;
-  align-items: flex-start;
+  align-items: stretch;
   margin-top: 16px;
   padding-bottom: 6px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-line) transparent;
+  min-height: 0;
 }
 .phone-frame {
-  flex-shrink: 0;
-  width: 112px;
+  flex: 1 1 0;
+  min-width: 0;
   background: #07202e;
   border-radius: 16px;
   border: 1.5px solid var(--border);
@@ -528,9 +526,12 @@ html, body {
 }
 .phone-frame img {
   width: 100%;
+  flex: 1;
+  min-height: 0;
   border-radius: 10px;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: top;
 }
 .phone-label {
   font-family: var(--mono);
@@ -540,6 +541,7 @@ html, body {
   text-align: center;
   opacity: 0.65;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 /* ── Pretotipo photo grid ── */
@@ -649,7 +651,7 @@ html, body {
       <div class="finding-list">
         <div class="finding-item">
           <div class="finding-dot"></div>
-          <p>Estudiantes pierden entre 15 y 25 minutos en horas pico, sin saber cuánto falta para ser atendidos.<em>Incertidumbre que paraliza la decisión de ir o no ir.</em></p>
+          <p>Estudiantes pierden entre 10 y 20 minutos en horas pico, sin saber cuánto falta para ser atendidos.<em>Incertidumbre que paraliza la decisión de ir o no ir.</em></p>
         </div>
         <div class="finding-item">
           <div class="finding-dot"></div>
@@ -678,19 +680,19 @@ html, body {
       <div class="finding-list">
         <div class="finding-item">
           <div class="finding-dot"></div>
-          <p>El tiempo de espera promedio en hora pico supera los <strong style="color:var(--accent)">20 minutos</strong>, con picos de hasta 35.<em>Fuente: estudio de cafeterías universitarias en México (referencia del proyecto).</em></p>
+          <p>El tiempo total desde que un estudiante hace la fila hasta que termina de consumir puede llegar a los <strong style="color:var(--accent)">50 minutos</strong>.<em>Fuente: estudio de cafeterías universitarias en México (García Martínez et al., 2024).</em></p>
         </div>
         <div class="finding-item">
           <div class="finding-dot"></div>
-          <p>El cuello de botella está en <strong style="color:var(--accent)">caja</strong>, no en la preparación de los alimentos.<em>Donde el sistema se quiebra es en la captura del pedido, no en su ejecución.</em></p>
+          <p>El cuello de botella está en el <strong style="color:var(--accent)">área de preparación</strong> de alimentos, donde muchos platos se hacen en el momento.<em>La demora se origina en la producción, no solo en la atención.</em></p>
         </div>
         <div class="finding-item">
           <div class="finding-dot"></div>
-          <p>Más del <strong style="color:var(--accent)">60 %</strong> de los estudiantes usaría su celular para ordenar anticipadamente si pudiera.<em>Intención de uso alta; la tecnología no es la barrera.</em></p>
+          <p>Los estudiantes cuentan con entre <strong style="color:var(--accent)">15 y 20 minutos</strong> de receso, insuficiente frente a los tiempos reales de atención.<em>El tiempo de descanso no alcanza para completar el proceso de compra.</em></p>
         </div>
         <div class="finding-item">
           <div class="finding-dot"></div>
-          <p>El menú no se actualiza durante el día: los clientes descubren que algo no hay cuando ya están en caja.<em>Fricción evitable que genera frustración y abandono.</em></p>
+          <p>La <strong style="color:var(--accent)">ausencia de sistemas automatizados</strong> ralentiza el flujo de atención y aumenta las filas.<em>Falta de digitalización en un entorno con usuarios nativamente digitales.</em></p>
         </div>
       </div>
     </div>
@@ -754,7 +756,7 @@ html, body {
         </div>
         <div class="theme-card">
           <div class="theme-name">Observación no participante</div>
-          <div class="theme-desc">2 sesiones en la cafetería durante horario pico (12:00–14:00). Observamos el flujo de servicio sin intervenir, registrando tiempos y puntos de quiebre.</div>
+          <div class="theme-desc">Sesiones en la cafetería durante horarios de recreo entre clases. Observamos el flujo de servicio sin intervenir, registrando tiempos y puntos de quiebre.</div>
         </div>
         <div class="theme-card">
           <div class="theme-name">Guión de entrevista</div>
@@ -786,32 +788,32 @@ html, body {
         <tbody>
           <tr>
             <td><strong>Rodolfo</strong></td>
-            <td>Estudiante, Ingeniería</td>
-            <td>Va a la cafetería 3 veces por semana. Poca tolerancia a la espera, prioriza previsibilidad.</td>
+            <td>Estudiante, Contador Público y Economía (UDELAR)</td>
+            <td>Va a la cafetería 2–3 veces por semana. Celíaco. Prioriza previsibilidad; ha optado por traer comida de casa.</td>
             <td><span class="badge">Estudiante</span></td>
           </tr>
           <tr>
             <td><strong>Franco</strong></td>
-            <td>Estudiante, Diseño</td>
-            <td>Entre clases tiene 15 minutos. Si la fila parece larga, se va sin comer.</td>
+            <td>Estudiante, Lic. en Sistemas (ORT)</td>
+            <td>Va todos los días. Si la fila parece larga, se va sin comer. Evalúa constantemente si vale la pena esperar.</td>
             <td><span class="badge">Estudiante</span></td>
           </tr>
           <tr>
             <td><strong>Marcos</strong></td>
-            <td>Estudiante, Empresariales</td>
-            <td>Horario cargado. Llegó tarde a clase por la fila del mediodía más de una vez.</td>
+            <td>Estudiante, Analista en Sistemas (Da Vinci, Argentina)</td>
+            <td>Combina estudio y trabajo. Depende de la cantina para comer. Llegó 15 minutos tarde a clase por la fila.</td>
             <td><span class="badge">Estudiante</span></td>
           </tr>
           <tr>
             <td><strong>Gabriela</strong></td>
             <td>Personal de cafetería</td>
-            <td>7 años de experiencia. Gestiona pedidos manualmente. Conoce el pico pero no puede anticiparse.</td>
+            <td>Amplia experiencia en atención al público. El cobro es el proceso que más demora genera. Abierta a soluciones tecnológicas.</td>
             <td><span class="badge staff">Personal</span></td>
           </tr>
           <tr>
             <td><strong>Maximiliano</strong></td>
-            <td>Personal de caja</td>
-            <td>Saturado en horas pico. Comete errores por volumen y ruido. Pide ayuda y no llega.</td>
+            <td>Encargado de cafetería (UDE, Colonia)</td>
+            <td>Gestiona pedidos y coordina preparación. No logra atender a todos en el recreo. Propone pedidos anticipados.</td>
             <td><span class="badge staff">Personal</span></td>
           </tr>
         </tbody>
@@ -827,23 +829,23 @@ html, body {
     <h2 class="slide-title">Lo que <em>escuchamos</em></h2>
 
     <div class="content">
-      <p class="slide-body">Estos fragmentos no son los más dramáticos — son los más representativos. Cada uno aparece en al menos dos entrevistas distintas.</p>
+      <p class="slide-body">Fragmentos textuales de las entrevistas realizadas — los más representativos de cada perfil.</p>
 
       <div class="quote-grid">
         <div class="quote-card">
-          <p class="quote-text">"A veces prefiero no comer antes que hacer cola y llegar tarde a la siguiente clase."</p>
+          <p class="quote-text">"No poder casi disfrutar del rato de descanso por tener que estar esperando."</p>
           <div class="quote-author">FRANCO · ESTUDIANTE</div>
         </div>
         <div class="quote-card">
-          <p class="quote-text">"No sé cuánta gente va a venir. Me entero cuando ya están todos parados en la puerta."</p>
+          <p class="quote-text">"Me ha pasado de dejar a chiquilines sin poder ser atendidos, sin poder comer ya que no da el tiempo del recreo."</p>
           <div class="quote-author">GABRIELA · PERSONAL</div>
         </div>
         <div class="quote-card">
-          <p class="quote-text">"Llegué tarde dos veces esta semana por la fila del mediodía. Mi profesor ya me preguntó qué pasaba."</p>
+          <p class="quote-text">"Terminás pasando el recreo en la fila en vez de descansando. Llegamos 15 minutos tarde por esperar la comida."</p>
           <div class="quote-author">MARCOS · ESTUDIANTE</div>
         </div>
         <div class="quote-card">
-          <p class="quote-text">"Me equivoco seguido. Con el ruido y todos hablando a la vez, no escucho bien el pedido."</p>
+          <p class="quote-text">"Es difícil atenderlos a todos con la rapidez que demandan. Es toda una locura y una desorganización."</p>
           <div class="quote-author">MAXIMILIANO · PERSONAL</div>
         </div>
       </div>
@@ -864,22 +866,22 @@ html, body {
         </div>
 
         <div class="obs-detail">
-          <div class="obs-meta">2 SESIONES · 45 MIN C/U · 12:00–14:00</div>
+          <div class="obs-meta">CAFETERÍA ORT · HORARIO DE RECREO · ~11:00</div>
           <div class="obs-item">
             <div class="obs-num">01</div>
-            <p>El flujo se quiebra en <strong style="color:var(--text)">caja</strong>: los clientes esperan mientras el cajero anota el pedido a mano en una hoja impresa.</p>
+            <p>Aumento <strong style="color:var(--text)">repentino</strong> de estudiantes: la cafetería pasó de vacía a congestionada en menos de 7 minutos.</p>
           </div>
           <div class="obs-item">
             <div class="obs-num">02</div>
-            <p>Los pedidos se repiten en voz alta hacia cocina, generando <strong style="color:var(--text)">confusión</strong> cuando hay más de tres clientes simultáneos.</p>
+            <p>Los estudiantes se agruparon cerca de la <strong style="color:var(--text)">caja</strong>, formando filas y zonas de espera desordenadas.</p>
           </div>
           <div class="obs-item">
             <div class="obs-num">03</div>
-            <p>La pizarra de menú <strong style="color:var(--text)">no se actualiza</strong> durante el día: tres clientes preguntaron por platos que ya no había.</p>
+            <p>Comportamiento marcado por el <strong style="color:var(--text)">apuro</strong>: estudiantes pendientes del avance de la fila y del tiempo disponible.</p>
           </div>
           <div class="obs-item">
             <div class="obs-num">04</div>
-            <p>Los estudiantes revisan el celular <strong style="color:var(--text)">mientras esperan en fila</strong>. El tiempo de espera ya existe — se puede aprovechar.</p>
+            <p>Pequeños cambios en la cantidad de personas impactaron <strong style="color:var(--text)">rápidamente</strong> en la organización y fluidez del espacio.</p>
           </div>
         </div>
       </div>
@@ -952,27 +954,23 @@ html, body {
     <div class="content" style="flex:1">
       <div class="persona-grid">
         <div class="persona-card">
-          <div class="persona-img-area">
-            <div class="img-placeholder-icon">🖼️</div>
-            <div class="img-placeholder-label">Insertar persona</div>
-            <div class="img-placeholder-hint">Journey map o ilustración</div>
+          <div class="persona-img-area" style="padding:0;border-bottom:none">
+            <img src="fotos/empatia/Franco_JM.png" alt="Journey Map — Franco" style="width:100%;height:100%;object-fit:contain;object-position:center;border-bottom:1px solid var(--accent-line)" />
           </div>
           <div class="persona-info">
-            <div class="persona-name">Valentina, 22 años</div>
-            <div class="persona-role">ESTUDIANTE · INGENIERÍA</div>
-            <div class="persona-desc">Va a la cafetería casi todos los días pero evita el horario pico. Cuando decide ir, necesita saber con precisión cuánto va a tardar. La incertidumbre la frustra más que la espera en sí.</div>
+            <div class="persona-name">Franco, 22 años</div>
+            <div class="persona-role">ESTUDIANTE · LIC. EN SISTEMAS (ORT)</div>
+            <div class="persona-desc">Va a la cantina todos los días. Evalúa constantemente si vale la pena hacer la fila. Si percibe que no llega a clase, se va sin comer. La incertidumbre lo frustra más que la espera en sí.</div>
           </div>
         </div>
         <div class="persona-card">
-          <div class="persona-img-area">
-            <div class="img-placeholder-icon">🖼️</div>
-            <div class="img-placeholder-label">Insertar persona</div>
-            <div class="img-placeholder-hint">Journey map o ilustración</div>
+          <div class="persona-img-area" style="padding:0;border-bottom:none">
+            <img src="fotos/empatia/Gabriela_JM.png" alt="Journey Map — Gabriela" style="width:100%;height:100%;object-fit:contain;object-position:center;border-bottom:1px solid var(--accent-line)" />
           </div>
           <div class="persona-info">
-            <div class="persona-name">Gabriel, 38 años</div>
+            <div class="persona-name">Gabriela, 58 años</div>
             <div class="persona-role">PERSONAL DE CAFETERÍA</div>
-            <div class="persona-desc">Lleva 8 años en el servicio. Conoce los ritmos mejor que nadie, pero gestiona todo de memoria y en papel. Quiere anticiparse al pico antes de que explote, no reaccionar cuando ya es tarde.</div>
+            <div class="persona-desc">Amplia experiencia en atención al público. Prepara todo antes de abrir pero no puede prever la demanda. El cobro es el mayor cuello de botella. Quiere anticiparse al pico, no reaccionar cuando ya es tarde.</div>
           </div>
         </div>
       </div>
@@ -1018,7 +1016,7 @@ html, body {
       <p class="slide-body">De los cuatro POVs, elegimos el que mejor sintetiza la tensión central: la incertidumbre como barrera de uso, no la espera en sí.</p>
 
       <div class="pov-big">
-        <p>"Un estudiante universitario necesita poder <strong style="color:var(--accent);font-style:normal">anticipar y gestionar su tiempo</strong> en la cafetería porque la incertidumbre sobre la espera lo lleva a evitar el servicio por completo."</p>
+        <p>"Un estudiante universitario con poco tiempo entre clases necesita una forma <strong style="color:var(--accent);font-style:normal">rápida y organizada de realizar pedidos</strong> en cafeterías porque la incertidumbre y las filas extensas le generan estrés y pérdida de tiempo."</p>
       </div>
 
       <div class="pov-hmw" style="margin-top:20px">¿POR QUÉ ESTE Y NO OTRO?</div>
@@ -1070,19 +1068,19 @@ html, body {
       <div class="hmw-list">
         <div class="hmw-item">
           <div class="hmw-prefix">HMW</div>
-          <p>¿Cómo podríamos permitir que el estudiante <strong style="color:var(--text)">ordene antes de llegar al mostrador</strong> sin necesitar una cuenta bancaria?</p>
+          <p>¿Cómo podríamos permitir que los estudiantes <strong style="color:var(--text)">realicen su pedido antes de llegar</strong> a la cafetería, para que solo necesiten retirarlo?</p>
         </div>
         <div class="hmw-item">
           <div class="hmw-prefix">HMW</div>
-          <p>¿Cómo podríamos darle al personal <strong style="color:var(--text)">visibilidad de la demanda</strong> antes de que el pico llegue?</p>
+          <p>¿Cómo podríamos <strong style="color:var(--text)">mostrarle al estudiante cuánto tiempo de espera</strong> hay en la cafetería antes de que decida acercarse?</p>
         </div>
         <div class="hmw-item">
           <div class="hmw-prefix">HMW</div>
-          <p>¿Cómo podríamos <strong style="color:var(--text)">reducir la fricción en caja</strong> sin eliminar el pago en efectivo como opción?</p>
+          <p>¿Cómo podríamos <strong style="color:var(--text)">reducir la congestión en caja</strong> durante los recreos sin necesidad de agregar personal?</p>
         </div>
         <div class="hmw-item">
           <div class="hmw-prefix">HMW</div>
-          <p>¿Cómo podríamos mostrar <strong style="color:var(--text)">disponibilidad real del menú</strong> sin requerir que el personal lo actualice manualmente?</p>
+          <p>¿Cómo podríamos ayudar al personal a <strong style="color:var(--text)">conocer la demanda</strong> antes de que comience el recreo?</p>
         </div>
       </div>
     </div>
@@ -1289,6 +1287,7 @@ html, body {
   <span id="slide-counter"></span>
   <button class="nav-btn" id="prev-btn" aria-label="Diapositiva anterior" onclick="go(-1)">←</button>
   <button class="nav-btn" id="next-btn" aria-label="Diapositiva siguiente" onclick="go(1)">→</button>
+  <button class="nav-btn" id="fs-btn" aria-label="Pantalla completa" onclick="toggleFS()" title="Pantalla completa (F)">⛶</button>
 </div>
 
 <script>
@@ -1312,6 +1311,19 @@ html, body {
 
   window.go = function (dir) { show(current + dir); };
 
+  window.toggleFS = function () {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
+  document.addEventListener('fullscreenchange', function () {
+    document.getElementById('fs-btn').textContent = document.fullscreenElement ? '⛶' : '⛶';
+    document.getElementById('fs-btn').title = document.fullscreenElement ? 'Salir de pantalla completa (F)' : 'Pantalla completa (F)';
+  });
+
   document.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
       e.preventDefault();
@@ -1319,6 +1331,9 @@ html, body {
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       e.preventDefault();
       show(current - 1);
+    } else if (e.key === 'f' || e.key === 'F') {
+      e.preventDefault();
+      toggleFS();
     } else if (e.key === 'Home') {
       e.preventDefault();
       show(0);
