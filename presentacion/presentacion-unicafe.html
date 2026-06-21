@@ -430,24 +430,62 @@ html, body {
   letter-spacing: 0.1em;
 }
 
-/* ── Competitor cards ── */
-.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
-.comp-card { padding: 22px 24px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 9px; }
-.comp-name { font-size: 15px; font-weight: 700; color: var(--text); }
-.comp-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
-.comp-tag { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; }
-
-.gap-card {
-  margin-top: 14px;
-  padding: 16px 22px;
-  border: 1px dashed var(--accent-line);
-  background: rgba(139,195,74,0.04);
+/* ── Competitor layout ── */
+.comp-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  flex: 1;
+  margin-top: 18px;
+  min-height: 0;
+}
+.comp-col {
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.comp-col.highlight { border-color: var(--accent); }
+.comp-header {
+  padding: 20px 22px 16px;
+  border-bottom: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-.gap-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; color: var(--accent); }
-.gap-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+.comp-col.highlight .comp-header { background: var(--accent-dim); border-bottom-color: var(--accent); }
+.comp-icon { font-size: 28px; margin-bottom: 4px; }
+.comp-name { font-size: 16px; font-weight: 700; color: var(--text); }
+.comp-tag { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; }
+.comp-col.highlight .comp-name { color: var(--accent); }
+.comp-features {
+  padding: 16px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.comp-feat {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.comp-check { flex-shrink: 0; font-size: 13px; width: 18px; text-align: center; }
+.comp-check.yes { color: var(--accent); }
+.comp-check.no { color: rgba(240,244,245,0.25); }
+.comp-check.partial { color: #4dd0e1; }
+.comp-bottom {
+  padding: 14px 22px;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.comp-col.highlight .comp-bottom { color: var(--accent); background: var(--accent-dim); }
 
 /* ── HMW list ── */
 .hmw-list { display: flex; flex-direction: column; gap: 11px; margin-top: 18px; }
@@ -991,29 +1029,65 @@ html, body {
   <!-- ══ SLIDE 14 — COMPETIDORES ══ -->
   <section class="slide" id="s14">
     <div class="tag">CONTEXTO</div>
-    <h2 class="slide-title">Qué están haciendo<br>los <em>demás</em></h2>
+    <h2 class="slide-title">Qué están haciendo los <em>demás</em></h2>
 
-    <div class="content">
-      <div class="comp-grid">
-        <div class="comp-card">
-          <div class="comp-name">McDonald's App</div>
-          <div class="comp-tag">FAST FOOD · ORDEN ANTICIPADA</div>
-          <div class="comp-desc">Orden anticipada desde el celular con seguimiento en tiempo real del estado del pedido. Referente en UX de quick service. Funciona porque el menú es fijo y el precio no varía.</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Starbucks App</div>
-          <div class="comp-tag">CAFÉ · PEDIDO MÓVIL + FIDELIZACIÓN</div>
-          <div class="comp-desc">Mobile order & pay con integración a programa de lealtad. Caso de éxito en entornos con mucha repetición de pedidos. Ha reducido el tiempo en mostrador en un 20 % en locales habilitados.</div>
-        </div>
-      </div>
+    <div class="content" style="flex:1;min-height:0">
+      <div class="comp-layout">
 
-      <div class="gap-card">
-        <div class="gap-label">BRECHA DE OPORTUNIDAD</div>
-        <div class="gap-text">
-          Ninguna solución existente está pensada para el contexto universitario: menú cambiante según el día,
-          usuarios sin cuenta bancaria establecida, pago en efectivo como opción necesaria, y un personal con carga operativa
-          altísima sin sistema de soporte. <strong style="color:var(--accent)">El espacio está vacante.</strong>
+        <div class="comp-col">
+          <div class="comp-header">
+            <div class="comp-icon">🍔</div>
+            <div class="comp-name">McDonald's App</div>
+            <div class="comp-tag">FAST FOOD · ORDEN ANTICIPADA</div>
+          </div>
+          <div class="comp-features">
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pedido anticipado desde celular</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pago digital integrado</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Seguimiento del estado del pedido</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Retiro organizado en local</div>
+            <div class="comp-feat"><span class="comp-check no">✗</span> Enfoque universitario</div>
+            <div class="comp-feat"><span class="comp-check no">✗</span> Pago en efectivo como opción</div>
+            <div class="comp-feat"><span class="comp-check no">✗</span> Panel para personal operativo</div>
+          </div>
+          <div class="comp-bottom">MENÚ FIJO · PRECIO INVARIABLE</div>
         </div>
+
+        <div class="comp-col">
+          <div class="comp-header">
+            <div class="comp-icon">☕</div>
+            <div class="comp-name">Starbucks App</div>
+            <div class="comp-tag">CAFÉ · PEDIDO MÓVIL + FIDELIZACIÓN</div>
+          </div>
+          <div class="comp-features">
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pedido anticipado desde celular</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pago digital integrado</div>
+            <div class="comp-feat"><span class="comp-check partial">~</span> Seguimiento parcial del pedido</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Retiro rápido en tienda</div>
+            <div class="comp-feat"><span class="comp-check no">✗</span> Enfoque universitario</div>
+            <div class="comp-feat"><span class="comp-check no">✗</span> Pago en efectivo como opción</div>
+            <div class="comp-feat"><span class="comp-check no">✗</span> Panel para personal operativo</div>
+          </div>
+          <div class="comp-bottom">ALTA REPETICIÓN · FIDELIZACIÓN</div>
+        </div>
+
+        <div class="comp-col highlight">
+          <div class="comp-header">
+            <div class="comp-icon">🎓</div>
+            <div class="comp-name">UniCafé</div>
+            <div class="comp-tag">UNIVERSITARIO · PEDIDO + GESTIÓN</div>
+          </div>
+          <div class="comp-features">
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pedido anticipado desde celular</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pago digital integrado</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Seguimiento en tiempo real</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Retiro organizado sin fila</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Diseñado para el contexto universitario</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Pago en efectivo como opción</div>
+            <div class="comp-feat"><span class="comp-check yes">✓</span> Panel de gestión para el personal</div>
+          </div>
+          <div class="comp-bottom">EL ESPACIO ESTÁ VACANTE</div>
+        </div>
+
       </div>
     </div>
   </section>
