@@ -344,10 +344,30 @@ html, body {
 }
 
 /* ── Theme 2x2 grid ── */
-.theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; flex: 1; }
-.theme-card { padding: 20px 22px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 7px; }
-.theme-name { font-size: 13px; font-weight: 700; color: var(--accent); }
-.theme-desc { font-size: 12px; color: var(--muted); line-height: 1.55; }
+.theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; flex: 1; }
+.theme-card {
+  padding: 22px 24px 22px 22px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: var(--faint);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.theme-card-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-dim);
+  border-radius: 8px;
+}
+.theme-card-body { display: flex; flex-direction: column; gap: 5px; }
+.theme-name { font-size: 16px; font-weight: 700; color: var(--text); }
+.theme-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
 /* ── Insights ── */
 .insight-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
@@ -638,10 +658,10 @@ html, body {
   flex: 1;
   margin-top: 16px;
   min-height: 0;
-  align-items: start;
+  align-items: center;
 }
 .split-left { display: flex; flex-direction: column; gap: 16px; }
-.split-right { display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; height: 100%; }
+.split-right { display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; }
 
 /* ── Stat callout ── */
 .stat-block {
@@ -873,20 +893,32 @@ html, body {
 
       <div class="theme-grid" style="margin-top:28px">
         <div class="theme-card">
-          <div class="theme-name">Entrevistas en profundidad</div>
-          <div class="theme-desc">5 sesiones individuales con usuarios reales del servicio — 3 estudiantes y 2 miembros del personal de cafetería. Duración: 20–35 minutos cada una.</div>
+          <div class="theme-card-icon">🎙️</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Entrevistas en profundidad</div>
+            <div class="theme-desc">5 sesiones individuales con usuarios reales — 3 estudiantes y 2 miembros del personal de cafetería. Duración: 20–35 minutos cada una.</div>
+          </div>
         </div>
         <div class="theme-card">
-          <div class="theme-name">Observación no participante</div>
-          <div class="theme-desc">Sesiones en la cafetería durante horarios de recreo entre clases. Observamos el flujo de servicio sin intervenir, registrando tiempos y puntos de quiebre.</div>
+          <div class="theme-card-icon">👁️</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Observación no participante</div>
+            <div class="theme-desc">Sesiones en la cafetería durante horarios de recreo. Observamos el flujo de servicio sin intervenir, registrando tiempos y puntos de quiebre.</div>
+          </div>
         </div>
         <div class="theme-card">
-          <div class="theme-name">Mapas de empatía</div>
-          <div class="theme-desc">Construimos un mapa de empatía por cada usuario entrevistado para sintetizar qué piensan, sienten, escuchan y dicen en relación a la experiencia en la cafetería.</div>
+          <div class="theme-card-icon">🧠</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Mapas de empatía</div>
+            <div class="theme-desc">Un mapa por cada usuario entrevistado para sintetizar qué piensan, sienten, escuchan y dicen sobre la experiencia en la cafetería.</div>
+          </div>
         </div>
         <div class="theme-card">
-          <div class="theme-name">Journey Maps</div>
-          <div class="theme-desc">Mapeamos la experiencia completa de los usuarios clave — desde que deciden ir a la cafetería hasta que terminan de comer — identificando emociones, pensamientos y puntos de dolor en cada etapa.</div>
+          <div class="theme-card-icon">🗺️</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Journey Maps</div>
+            <div class="theme-desc">La experiencia completa de los usuarios clave — desde que deciden ir hasta que terminan de comer — con emociones y puntos de dolor en cada etapa.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -984,20 +1016,32 @@ html, body {
 
       <div class="theme-grid">
         <div class="theme-card">
-          <div class="theme-name">Incertidumbre de tiempo</div>
-          <div class="theme-desc">Nadie sabe cuánto va a esperar. Sin esa información, la decisión de ir o no ir se vuelve un riesgo que muchos no toman.</div>
+          <div class="theme-card-icon">⏳</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Incertidumbre de tiempo</div>
+            <div class="theme-desc">Nadie sabe cuánto va a esperar. Sin esa información, la decisión de ir o no ir se vuelve un riesgo que muchos no toman.</div>
+          </div>
         </div>
         <div class="theme-card">
-          <div class="theme-name">Comunicación fragmentada</div>
-          <div class="theme-desc">El pedido pasa por tres instancias (cliente, caja, cocina) en voz alta y a mano. Cada transmisión es una oportunidad de error.</div>
+          <div class="theme-card-icon">🔗</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Comunicación fragmentada</div>
+            <div class="theme-desc">El pedido pasa por tres instancias (cliente, caja, cocina) en voz alta y a mano. Cada transmisión es una oportunidad de error.</div>
+          </div>
         </div>
         <div class="theme-card">
-          <div class="theme-name">Autonomía del estudiante</div>
-          <div class="theme-desc">Los estudiantes quieren decidir y actuar sin depender de que alguien los atienda. La fricción está en el contacto, no en la espera per se.</div>
+          <div class="theme-card-icon">✋</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Autonomía del estudiante</div>
+            <div class="theme-desc">Los estudiantes quieren decidir y actuar sin depender de que alguien los atienda. La fricción está en el contacto, no en la espera per se.</div>
+          </div>
         </div>
         <div class="theme-card">
-          <div class="theme-name">Carga operativa del personal</div>
-          <div class="theme-desc">Gabriela y Maximiliano saben exactamente qué va a pasar en el pico — pero no tienen herramientas para anticiparse. El conocimiento existe; el sistema no lo aprovecha.</div>
+          <div class="theme-card-icon">⚙️</div>
+          <div class="theme-card-body">
+            <div class="theme-name">Carga operativa del personal</div>
+            <div class="theme-desc">Gabriela y Maximiliano saben qué va a pasar en el pico — pero no tienen herramientas para anticiparse. El conocimiento existe; el sistema no lo aprovecha.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1148,38 +1192,38 @@ html, body {
         </p>
       </div>
 
-      <div class="split-right" style="gap:0;justify-content:stretch">
-        <div style="flex:1;width:100%;border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:20px">
-          <div class="stat-label">EL POV CONECTA DOS MUNDOS</div>
-          <div style="display:flex;flex-direction:column;gap:12px">
-            <div style="display:flex;align-items:center;gap:14px">
-              <div style="width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🧑‍🎓</div>
+      <div class="split-right" style="gap:24px;justify-content:center">
+        <div style="width:100%;border:1px solid var(--border);padding:36px 32px;display:flex;flex-direction:column;gap:28px">
+          <div class="stat-label" style="font-size:12px;letter-spacing:0.18em">EL POV CONECTA DOS MUNDOS</div>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;align-items:center;gap:18px">
+              <div style="width:60px;height:60px;border-radius:50%;border:2.5px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">🧑‍🎓</div>
               <div>
-                <div style="font-size:13px;color:var(--text);font-weight:600">Estudiante</div>
-                <div style="font-size:11px;color:var(--muted)">Quiere previsibilidad y rapidez</div>
+                <div style="font-size:18px;color:var(--text);font-weight:700">Estudiante</div>
+                <div style="font-size:14px;color:var(--muted);margin-top:2px">Quiere previsibilidad y rapidez</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;gap:14px;padding-left:20px">
-              <div style="width:2px;height:28px;background:var(--accent-line)"></div>
-              <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.1em">PEDIDO ANTICIPADO</div>
+            <div style="display:flex;align-items:center;gap:18px;padding-left:28px">
+              <div style="width:3px;height:36px;background:var(--accent);border-radius:2px"></div>
+              <div style="font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:0.14em;font-weight:700">PEDIDO ANTICIPADO</div>
             </div>
-            <div style="display:flex;align-items:center;gap:14px">
-              <div style="width:44px;height:44px;border-radius:50%;border:2px solid #4dd0e1;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">👩‍🍳</div>
+            <div style="display:flex;align-items:center;gap:18px">
+              <div style="width:60px;height:60px;border-radius:50%;border:2.5px solid #4dd0e1;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0">👩‍🍳</div>
               <div>
-                <div style="font-size:13px;color:var(--text);font-weight:600">Personal</div>
-                <div style="font-size:11px;color:var(--muted)">Quiere anticipación y organización</div>
+                <div style="font-size:18px;color:var(--text);font-weight:700">Personal</div>
+                <div style="font-size:14px;color:var(--muted);margin-top:2px">Quiere anticipación y organización</div>
               </div>
             </div>
           </div>
         </div>
         <div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:0">
-          <div style="padding:18px 20px;border:1px solid var(--border);border-right:none;display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center">
-            <div style="font-family:var(--serif);font-size:28px;color:var(--accent)">1</div>
-            <div class="stat-label">INTERVENCIÓN</div>
+          <div style="padding:28px 24px;border:1px solid var(--border);border-right:none;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center">
+            <div style="font-family:var(--serif);font-size:48px;color:var(--accent);line-height:1">1</div>
+            <div class="stat-label" style="font-size:11px">INTERVENCIÓN</div>
           </div>
-          <div style="padding:18px 20px;border:1px solid var(--border);display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center">
-            <div style="font-family:var(--serif);font-size:28px;color:var(--accent)">2</div>
-            <div class="stat-label">PROBLEMAS RESUELTOS</div>
+          <div style="padding:28px 24px;border:1px solid var(--border);display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center">
+            <div style="font-family:var(--serif);font-size:48px;color:var(--accent);line-height:1">2</div>
+            <div class="stat-label" style="font-size:11px">PROBLEMAS RESUELTOS</div>
           </div>
         </div>
       </div>
