@@ -630,6 +630,49 @@ html, body {
 .ty-team { margin-top: 32px; display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
 .ty-person { font-size: 13px; color: var(--muted); }
 
+/* ── Split layout (text left + visual right) ── */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  flex: 1;
+  margin-top: 16px;
+  min-height: 0;
+  align-items: start;
+}
+.split-left { display: flex; flex-direction: column; gap: 16px; }
+.split-right { display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; height: 100%; }
+
+/* ── Stat callout ── */
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  background: var(--faint);
+}
+.stat-block.accent-border { border-left: 3px solid var(--accent); }
+.stat-val {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--accent);
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.stat-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   .slide, #progress-bar { transition: none; }
@@ -678,29 +721,48 @@ html, body {
     <div class="tag">DESAFÍO</div>
     <h2 class="slide-title">Comer en la universidad<br>no debería ser <em>un problema</em></h2>
 
-    <div class="content">
-      <p class="slide-body">
-        El tiempo entre clases es corto. La cafetería, en cambio, no: filas largas, pedidos confusos, esperas impredecibles.
-        Los estudiantes llegan tarde, saltean comidas o directamente evitan ir.
-      </p>
+    <div class="split">
+      <div class="split-left">
+        <p class="slide-body" style="margin-top:0">
+          El tiempo entre clases es corto. La cafetería, en cambio, no: filas largas, pedidos confusos, esperas impredecibles.
+          Los estudiantes llegan tarde, saltean comidas o directamente evitan ir.
+        </p>
 
-      <div class="finding-list">
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>Estudiantes pierden entre 10 y 20 minutos en horas pico, sin saber cuánto falta para ser atendidos.<em>Incertidumbre que paraliza la decisión de ir o no ir.</em></p>
-        </div>
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>El personal no conoce la demanda hasta que los clientes ya están parados en el mostrador.<em>Sin anticipación, no hay preparación posible.</em></p>
-        </div>
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>Los pedidos se anotan a mano y se repiten en voz alta, generando errores en cocina.<em>Un flujo análogo en un entorno que ya tiene todo digital.</em></p>
+        <div class="finding-list">
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>Estudiantes pierden entre 10 y 20 minutos en horas pico, sin saber cuánto falta para ser atendidos.<em>Incertidumbre que paraliza la decisión de ir o no ir.</em></p>
+          </div>
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>El personal no conoce la demanda hasta que los clientes ya están parados en el mostrador.<em>Sin anticipación, no hay preparación posible.</em></p>
+          </div>
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>Los pedidos se anotan a mano y se repiten en voz alta, generando errores en cocina.<em>Un flujo análogo en un entorno que ya tiene todo digital.</em></p>
+          </div>
         </div>
       </div>
 
-      <div class="pullquote">
-        <p>"¿Cómo podemos mejorar la experiencia de compra en la cafetería universitaria?"</p>
+      <div class="split-right">
+        <div class="stat-block accent-border" style="width:100%">
+          <div class="stat-val">10–20 min</div>
+          <div class="stat-label">ESPERA EN HORA PICO</div>
+          <div class="stat-desc">Sin información sobre cuánto falta para ser atendido</div>
+        </div>
+        <div class="stat-block accent-border" style="width:100%">
+          <div class="stat-val">+20</div>
+          <div class="stat-label">PERSONAS EN FILA</div>
+          <div class="stat-desc">Registrado por múltiples entrevistados en sus cafeterías</div>
+        </div>
+        <div class="stat-block accent-border" style="width:100%">
+          <div class="stat-val">0</div>
+          <div class="stat-label">HERRAMIENTAS DIGITALES</div>
+          <div class="stat-desc">El proceso es completamente manual y analógico</div>
+        </div>
+        <div class="pullquote" style="width:100%;margin-top:8px">
+          <p>"¿Cómo podemos mejorar la experiencia de compra en la cafetería universitaria?"</p>
+        </div>
       </div>
     </div>
   </section>
@@ -710,25 +772,49 @@ html, body {
     <div class="tag">CONTEXTO</div>
     <h2 class="slide-title">Lo que ya sabíamos —<br>y lo que <em>confirmamos</em></h2>
 
-    <div class="content">
-      <p class="slide-body">Antes de hablar con usuarios, revisamos investigaciones existentes sobre servicios de cafetería universitaria y relevamos el contexto local.</p>
+    <div class="split">
+      <div class="split-left">
+        <p class="slide-body" style="margin-top:0">Antes de hablar con usuarios, revisamos investigaciones existentes sobre servicios de cafetería universitaria y relevamos el contexto local.</p>
 
-      <div class="finding-list">
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>El tiempo total desde que un estudiante hace la fila hasta que termina de consumir puede llegar a los <strong style="color:var(--accent)">50 minutos</strong>.<em>Fuente: estudio de cafeterías universitarias en México (García Martínez et al., 2024).</em></p>
+        <div class="finding-list">
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>El tiempo total desde que un estudiante hace la fila hasta que termina de consumir puede llegar a los <strong style="color:var(--accent)">50 minutos</strong>.<em>Fuente: García Martínez et al., 2024.</em></p>
+          </div>
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>El cuello de botella está en el <strong style="color:var(--accent)">área de preparación</strong> de alimentos, donde muchos platos se hacen en el momento.</p>
+          </div>
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>Los estudiantes cuentan con entre <strong style="color:var(--accent)">15 y 20 minutos</strong> de receso, insuficiente frente a los tiempos reales de atención.</p>
+          </div>
+          <div class="finding-item">
+            <div class="finding-dot"></div>
+            <p>La <strong style="color:var(--accent)">ausencia de sistemas automatizados</strong> ralentiza el flujo de atención y aumenta las filas.</p>
+          </div>
         </div>
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>El cuello de botella está en el <strong style="color:var(--accent)">área de preparación</strong> de alimentos, donde muchos platos se hacen en el momento.<em>La demora se origina en la producción, no solo en la atención.</em></p>
+      </div>
+
+      <div class="split-right">
+        <div style="width:100%;border:1px solid var(--border);padding:28px 24px;display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--faint)">
+          <div style="font-family:var(--serif);font-size:64px;color:var(--accent);line-height:1">50<span style="font-size:28px">min</span></div>
+          <div class="stat-label">TIEMPO MÁXIMO REGISTRADO</div>
+          <div style="font-size:12px;color:var(--muted);text-align:center;line-height:1.5;margin-top:4px">Desde la fila hasta terminar de consumir en hora pico</div>
         </div>
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>Los estudiantes cuentan con entre <strong style="color:var(--accent)">15 y 20 minutos</strong> de receso, insuficiente frente a los tiempos reales de atención.<em>El tiempo de descanso no alcanza para completar el proceso de compra.</em></p>
+        <div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="stat-block accent-border">
+            <div class="stat-val" style="font-size:28px">15–20<span style="font-size:16px">min</span></div>
+            <div class="stat-label">RECREO DISPONIBLE</div>
+          </div>
+          <div class="stat-block accent-border">
+            <div class="stat-val" style="font-size:28px;color:#e57373">2.5×</div>
+            <div class="stat-label">MÁS ESPERA QUE RECREO</div>
+          </div>
         </div>
-        <div class="finding-item">
-          <div class="finding-dot"></div>
-          <p>La <strong style="color:var(--accent)">ausencia de sistemas automatizados</strong> ralentiza el flujo de atención y aumenta las filas.<em>Falta de digitalización en un entorno con usuarios nativamente digitales.</em></p>
+        <div style="width:100%;padding:16px 20px;border:1px dashed var(--accent-line);background:rgba(139,195,74,0.04)">
+          <div class="stat-label" style="margin-bottom:6px">FUENTE</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;font-style:italic">García Martínez, R. et al. (2024). "Estrategia de Reducción de Tiempos y Mejora en la Logística en una Cafetería Universitaria." Revista Científica Multidisciplinaria.</div>
         </div>
       </div>
     </div>
@@ -922,8 +1008,8 @@ html, body {
     <div class="tag">DEFINICIÓN</div>
     <h2 class="slide-title">Lo que <em>realmente</em> está pasando</h2>
 
-    <div class="content">
-      <div class="insight-stack">
+    <div class="split" style="align-items:stretch">
+      <div class="split-left" style="gap:14px">
         <div class="insight-card">
           <div class="insight-num">1</div>
           <div class="insight-body">
@@ -941,6 +1027,41 @@ html, body {
           <div class="insight-body">
             <strong>El celular ya está en la mano.</strong> Los estudiantes usan el teléfono mientras esperan en fila. Ese tiempo de espera ya existe — la oportunidad es convertirlo en tiempo de pedido antes de llegar.
           </div>
+        </div>
+      </div>
+
+      <div class="split-right" style="justify-content:stretch;gap:0">
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid var(--border);padding:24px;gap:16px;width:100%">
+          <div class="stat-label" style="align-self:flex-start">HOY — SIN VISIBILIDAD</div>
+          <div style="display:flex;align-items:center;gap:16px;width:100%">
+            <div style="flex:1;text-align:center;padding:14px;border:1px solid rgba(229,115,115,0.3);background:rgba(229,115,115,0.06);border-radius:4px">
+              <div style="font-size:22px;margin-bottom:4px">🧑‍🎓</div>
+              <div style="font-size:11px;color:var(--muted)">No sabe cuánto esperar</div>
+            </div>
+            <div style="font-size:18px;color:rgba(229,115,115,0.5)">✗</div>
+            <div style="flex:1;text-align:center;padding:14px;border:1px solid rgba(229,115,115,0.3);background:rgba(229,115,115,0.06);border-radius:4px">
+              <div style="font-size:22px;margin-bottom:4px">👩‍🍳</div>
+              <div style="font-size:11px;color:var(--muted)">No sabe qué viene</div>
+            </div>
+          </div>
+          <div style="font-size:20px;color:var(--muted);opacity:0.4">↓</div>
+          <div style="padding:10px 16px;border:1px solid rgba(229,115,115,0.3);background:rgba(229,115,115,0.06);font-size:12px;color:#e57373;text-align:center;border-radius:4px;width:100%">Colapso en hora pico · Abandono de compra · Estrés</div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;border:1px solid var(--accent);padding:24px;gap:16px;width:100%;background:var(--accent-dim)">
+          <div class="stat-label" style="align-self:flex-start;color:var(--accent)">OPORTUNIDAD — CON INFORMACIÓN</div>
+          <div style="display:flex;align-items:center;gap:16px;width:100%">
+            <div style="flex:1;text-align:center;padding:14px;border:1px solid var(--accent-line);background:rgba(139,195,74,0.06);border-radius:4px">
+              <div style="font-size:22px;margin-bottom:4px">📱</div>
+              <div style="font-size:11px;color:var(--text)">Pide antes de llegar</div>
+            </div>
+            <div style="font-size:18px;color:var(--accent)">→</div>
+            <div style="flex:1;text-align:center;padding:14px;border:1px solid var(--accent-line);background:rgba(139,195,74,0.06);border-radius:4px">
+              <div style="font-size:22px;margin-bottom:4px">📋</div>
+              <div style="font-size:11px;color:var(--text)">Prepara con anticipación</div>
+            </div>
+          </div>
+          <div style="font-size:20px;color:var(--accent);opacity:0.6">↓</div>
+          <div style="padding:10px 16px;border:1px solid var(--accent);font-size:12px;color:var(--accent);text-align:center;border-radius:4px;width:100%">Flujo predecible · Menos espera · Recreo real</div>
         </div>
       </div>
     </div>
@@ -1012,18 +1133,56 @@ html, body {
     <div class="tag">DEFINICIÓN</div>
     <h2 class="slide-title">El punto de vista<br>que <em>guía el diseño</em></h2>
 
-    <div class="content">
-      <p class="slide-body">De los cuatro POVs, elegimos el que mejor sintetiza la tensión central: la incertidumbre como barrera de uso, no la espera en sí.</p>
+    <div class="split" style="align-items:stretch">
+      <div class="split-left">
+        <p class="slide-body" style="margin-top:0">De los cuatro POVs, elegimos el que mejor sintetiza la tensión central: la incertidumbre como barrera de uso, no la espera en sí.</p>
 
-      <div class="pov-big">
-        <p>"Un estudiante universitario con poco tiempo entre clases necesita una forma <strong style="color:var(--accent);font-style:normal">rápida y organizada de realizar pedidos</strong> en cafeterías porque la incertidumbre y las filas extensas le generan estrés y pérdida de tiempo."</p>
+        <div class="pov-big">
+          <p>"Un estudiante universitario con poco tiempo entre clases necesita una forma <strong style="color:var(--accent);font-style:normal">rápida y organizada de realizar pedidos</strong> en cafeterías porque la incertidumbre y las filas extensas le generan estrés y pérdida de tiempo."</p>
+        </div>
+
+        <div class="pov-hmw" style="margin-top:20px">¿POR QUÉ ESTE Y NO OTRO?</div>
+        <p class="slide-body" style="max-width:720px;margin-top:8px">
+          Resuelve el lado estudiantil y el operativo a la vez: si el estudiante puede ordenar con antelación,
+          el personal recibe la demanda antes del pico. Un solo vector de intervención, dos problemas atacados.
+        </p>
       </div>
 
-      <div class="pov-hmw" style="margin-top:20px">¿POR QUÉ ESTE Y NO OTRO?</div>
-      <p class="slide-body" style="max-width:720px">
-        Resuelve el lado estudiantil y el operativo a la vez: si el estudiante puede ordenar con antelación,
-        el personal recibe la demanda antes del pico. Un solo vector de intervención, dos problemas atacados.
-      </p>
+      <div class="split-right" style="gap:0;justify-content:stretch">
+        <div style="flex:1;width:100%;border:1px solid var(--border);padding:24px;display:flex;flex-direction:column;justify-content:center;gap:20px">
+          <div class="stat-label">EL POV CONECTA DOS MUNDOS</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:14px">
+              <div style="width:44px;height:44px;border-radius:50%;border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">🧑‍🎓</div>
+              <div>
+                <div style="font-size:13px;color:var(--text);font-weight:600">Estudiante</div>
+                <div style="font-size:11px;color:var(--muted)">Quiere previsibilidad y rapidez</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;padding-left:20px">
+              <div style="width:2px;height:28px;background:var(--accent-line)"></div>
+              <div style="font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.1em">PEDIDO ANTICIPADO</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px">
+              <div style="width:44px;height:44px;border-radius:50%;border:2px solid #4dd0e1;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">👩‍🍳</div>
+              <div>
+                <div style="font-size:13px;color:var(--text);font-weight:600">Personal</div>
+                <div style="font-size:11px;color:var(--muted)">Quiere anticipación y organización</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width:100%;display:grid;grid-template-columns:1fr 1fr;gap:0">
+          <div style="padding:18px 20px;border:1px solid var(--border);border-right:none;display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center">
+            <div style="font-family:var(--serif);font-size:28px;color:var(--accent)">1</div>
+            <div class="stat-label">INTERVENCIÓN</div>
+          </div>
+          <div style="padding:18px 20px;border:1px solid var(--border);display:flex;flex-direction:column;gap:4px;align-items:center;text-align:center">
+            <div style="font-family:var(--serif);font-size:28px;color:var(--accent)">2</div>
+            <div class="stat-label">PROBLEMAS RESUELTOS</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1242,12 +1401,9 @@ html, body {
 
     <div class="content">
       <div class="test-split">
-        <div>
-          <div class="img-placeholder" style="min-height:180px">
-            <div class="img-placeholder-icon">🧪</div>
-            <div class="img-placeholder-label">Fotos de sesiones de prueba</div>
-            <div class="img-placeholder-hint">Insertar imágenes del testing con usuarios</div>
-          </div>
+        <div style="display:flex;flex-direction:column;gap:12px;min-height:0;flex:1">
+          <img src="fotos/validacion_usuarios_prototipos/usuario1.jpeg" alt="Usuario probando la app" style="width:100%;flex:1;min-height:0;object-fit:cover;border-radius:4px;border:1px solid var(--border)" />
+          <img src="fotos/validacion_usuarios_prototipos/usuario2.jpeg" alt="Usuario probando la app" style="width:100%;flex:1;min-height:0;object-fit:cover;border-radius:4px;border:1px solid var(--border)" />
         </div>
 
         <div class="test-results">
