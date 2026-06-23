@@ -30,7 +30,7 @@ Antes de hablar con usuarios, investigamos algunos documentos sobre este problem
 
 Y pudimos encontrar estudios que documentaban que el tiempo total desde que un estudiante hace la fila hasta que termina de consumir puede llegar a los **50 minutos** en hora pico. Y que el cuello de botella está en la preparación de alimentos, ya que en muchos casos se hace en el momento.
 
-Ahora bien — un estudiante universitario tiene entre **15 y 20 minutos** de recreo. Eso significa que, en el peor caso, la espera es **dos veces y media más larga** que el tiempo libre disponible.
+Ahora bien — un estudiante universitario tiene entre **15 y 20 minutos** de recreo. 
 
 Estos números confirmaron lo que intuíamos: el problema no es anecdótico, y tampoco es nuevo. Simplemente nadie lo había resuelto todavía.
 
