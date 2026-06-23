@@ -47,13 +47,17 @@ En esta presentacion iremos viendo cada etapa, desde la primera entrevista hasta
 
 ## SLIDE 5 — Fase de empatía *(~40 seg)*
 
-Empezamos por entender. Antes de plantear cualquier solución, queríamos saber cómo vive esta experiencia la gente que la sufre todos los días.
+Antes de plantear cualquier solución, queríamos saber cómo vive esta experiencia la gente que la sufre todos los días, contemplando las visiones de tanto estudiantes como responsables de cantinas.
 
-Hicimos cuatro tipos de actividades: **entrevistas en profundidad**, **observación no participante** en las cafeterías durante el recreo, **mapas de empatía** para sintetizar qué piensan y sienten los usuarios, y **journey maps** para trazar el recorrido completo — desde que deciden ir hasta que terminan de comer.
+Hicimos entrevistas en profundidad a cinco personas: por un lado, tres estudiantes: Rodolfo, Franco y Marcos y por el otro, dos personas del lado operativo, Gabriela y Maximiliano, encargados de cafeterías universitarias. Buscamos que las entrevistas fueran con una modalidad de conversación natural, no un cuestionario rígido: queríamos que cada uno nos contara situaciones reales, no respuestas pensadas. Con los estudiantes profundizamos en cómo viven la espera, qué piensan mientras hacen la fila, y qué pasa cuando no llegan a comprar. Con el personal, buscamos entender el problema desde el otro lado del mostrador: cómo se preparan, qué genera más demoras, y cómo improvisan cuando la demanda los supera.
+
+También hicimos actividades de observación en la cafetería de la facultad, durante un horario de recreo. Sacamos fotos con pocos minutos de diferencia y el cambio es evidente: a las once menos cinco el lugar estaba prácticamente vacío, y siete minutos después ya había una aglomeración formada cerca de la caja. Esa secuencia nos mostró en vivo algo que las entrevistas ya nos decían: la demanda no crece gradualmente, sino que explota en una lapso de pocos minutos.
+
+A cada entrevista le aplicamos la técnica ¿Qué? ¿Cómo? ¿Por qué?, para ir más allá de la acción de observación y entender la motivación detrás. Por ejemplo: supongamos que un estudiante abandona la fila — ¿cómo? — se retira antes de llegar a la caja — ¿por qué? — porque percibe que no le va a dar el tiempo. Esa estructura nos ayudó a separar el comportamiento de la causa real.
+Y con toda esa información construimos journey maps, uno por cada entrevistado, trazando el recorrido completo desde antes del recreo hasta que vuelven a clase — con sus acciones, pensamientos, emociones y los puntos de dolor en cada etapa. Eso nos permitió ver, lado a lado, que el estudiante y el personal viven prácticamente el mismo problema desde ángulos opuestos.
 
 ---
 
-## ESTA HAY QUE CAMBIARLA
 ## SLIDE 6 — Usuarios entrevistados *(~50 seg)*
 
 Hablamos con cinco personas. Tres estudiantes y dos miembros del personal de cafetería.
@@ -103,17 +107,15 @@ Y el cuarto es la **carga operativa del personal**: Gabriela y Maximiliano saben
 
 ## SLIDE 9 — Insights *(~50 seg)*
 
-De esos patrones, extrajimos tres insights que cambiaron cómo veíamos el problema.
+De esos comportamientos, extrajimos tres insights que cambiaron cómo veíamos el problema.
 
-El primero fue que : **la fila no era el problema, sino que es el síntoma.** El problema real es la falta de visibilidad: el cliente no sabe cuánto esperar, el personal no sabe qué viene. Sin información compartida, el sistema colapsa.
+El primero: la fila no es el problema, es el síntoma. El problema real es la falta de visibilidad: el estudiante no sabe cuánto va a esperar, y el personal no sabe qué viene. Rodolfo lo describe muy bien cuando dice que mientras espera va "haciendo las cuentas en la cabeza" para ver si llega a clase. No es la espera en sí — es no saber cuánto va a durar. Eso es lo que lo hace insoportable. Y del otro lado, Maximiliano y Gabriela tienen exactamente el mismo problema, pero al revés: no saben cuánta demanda se viene hasta que ya la tienen encima. Los dos lados del mostrador están operando a ciegas. Sin información compartida entre ambos, el sistema colapsa apenas sube un poco la concurrencia.
 
-El segundo: **el personal tiene el expertise, le faltan las herramientas.** Gabriela puede predecir qué días son los más demandantes y qué platos se agotan primero. Ese conocimiento existe y hoy no se captura en ningún sistema.
-
-Y el tercero, quizás el más importante: **el celular ya está en la mano.** Los estudiantes usan el teléfono mientras esperan en fila. Ese tiempo de espera ya existe — la oportunidad es convertirlo en tiempo de pedido antes de llegar.
+El segundo: el personal ya tiene el expertise, lo que le falta son las herramientas. Gabriela nos contaba que ella ya sabe, por experiencia, cuántas empanadas de carne va a necesitar un día determinado — ese conocimiento existe, está en su cabeza, pero no está en ningún sistema. Hoy esa información se pierde apenas termina el turno. Si lográramos capturar ese conocimiento — qué se pide, cuándo, en qué volumen — no estaríamos inventando una solución desde cero, estaríamos digitalizando algo que el personal ya sabe hacer intuitivamente.
+Y el tercero, quizás el más importante: el celular ya está en la mano. Los estudiantes están parados en la fila mirando el teléfono — ese tiempo de espera ya existe, ya está ahí, no lo estamos inventando. La oportunidad no es eliminar ese tiempo, sino redirigirlo: convertir el tiempo que hoy se pierde mirando el celular en la fila, en tiempo de pedido antes de llegar a la cafetería. Es el mismo gesto — mirar el teléfono — pero resolviendo el problema en lugar de solo acompañando la espera.
 
 ---
 
-## AMPLIAR UN POCO MAS
 ## SLIDE 10 — Personas *(~35 seg)*
 
 Para diseñar bien, teníamos que tener muy claro para quién estábamos diseñando.
