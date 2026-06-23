@@ -47,27 +47,24 @@ En esta presentacion iremos viendo cada etapa, desde la primera entrevista hasta
 
 ## SLIDE 5 — Fase de empatía *(~40 seg)*
 
-Antes de plantear cualquier solución, queríamos saber cómo vive esta experiencia la gente que la sufre todos los días, contemplando las visiones de tanto estudiantes como responsables de cantinas.
+Antes de plantear cualquier solución, queríamos entender cómo vive esta experiencia la gente que la sufre todos los días — tanto estudiantes como responsables de cantinas.
 
-Hicimos entrevistas en profundidad a cinco personas: por un lado, tres estudiantes: Rodolfo, Franco y Marcos y por el otro, dos personas del lado operativo, Gabriela y Maximiliano, encargados de cafeterías universitarias. Buscamos que las entrevistas fueran con una modalidad de conversación natural, no un cuestionario rígido: queríamos que cada uno nos contara situaciones reales, no respuestas pensadas. Con los estudiantes profundizamos en cómo viven la espera, qué piensan mientras hacen la fila, y qué pasa cuando no llegan a comprar. Con el personal, buscamos entender el problema desde el otro lado del mostrador: cómo se preparan, qué genera más demoras, y cómo improvisan cuando la demanda los supera.
+Hicimos entrevistas en profundidad a cinco personas: tres estudiantes — Rodolfo, Franco y Marcos — y dos del lado operativo, Gabriela y Maximiliano. Las entrevistas fueron conversacionales, no un cuestionario rígido, buscando situaciones reales y no respuestas pensadas.
+También observamos la cafetería de la facultad durante un recreo: sacamos fotos con pocos minutos de diferencia, y el cambio fue evidente — de estar prácticamente vacía a tener aglomeración en la caja en apenas siete minutos. La demanda no crece gradual, explota.
 
-También hicimos actividades de observación en la cafetería de la facultad, durante un horario de recreo. Sacamos fotos con pocos minutos de diferencia y el cambio es evidente: a las once menos cinco el lugar estaba prácticamente vacío, y siete minutos después ya había una aglomeración formada cerca de la caja. Esa secuencia nos mostró en vivo algo que las entrevistas ya nos decían: la demanda no crece gradualmente, sino que explota en una lapso de pocos minutos.
-
-A cada entrevista le aplicamos la técnica ¿Qué? ¿Cómo? ¿Por qué?, para ir más allá de la acción de observación y entender la motivación detrás. Por ejemplo: supongamos que un estudiante abandona la fila — ¿cómo? — se retira antes de llegar a la caja — ¿por qué? — porque percibe que no le va a dar el tiempo. Esa estructura nos ayudó a separar el comportamiento de la causa real.
-Y con toda esa información construimos journey maps, uno por cada entrevistado, trazando el recorrido completo desde antes del recreo hasta que vuelven a clase — con sus acciones, pensamientos, emociones y los puntos de dolor en cada etapa. Eso nos permitió ver, lado a lado, que el estudiante y el personal viven prácticamente el mismo problema desde ángulos opuestos.
+A cada entrevista le aplicamos la técnica ¿Qué? ¿Cómo? ¿Por qué?, para ir más allá de lo observable y llegar a la motivación real. Y con todo eso armamos journey maps, uno por entrevistado, trazando su recorrido completo con acciones, pensamientos y emociones — lo que nos mostró que estudiantes y personal viven el mismo problema desde ángulos opuestos.
 
 ---
 
 ## SLIDE 6 — Usuarios entrevistados *(~50 seg)*
 
-Hablamos con cinco personas. Tres estudiantes y dos miembros del personal de cafetería.
+Hablamos con cinco personas: tres estudiantes y dos miembros del personal de cafetería.
 
-Del lado de los estudiantes, el abanico fue amplio: quisimos cubrir desde quien va todos los días y evalúa cada vez si vale la pena arriesgarse, hasta quien directamente ya evita la cafetería para no exponerse a la espera. Y también casos donde la consecuencia fue concreta, por ejemplo llegar tarde a clase.
+Del lado de los estudiantes buscamos un abanico amplio: Marcos va todos los días y depende de la cantina para comer, sin alternativa. Franco también va a diario, pero evalúa cada vez si vale la pena arriesgarse a la fila. Y Rodolfo, que va menos seguido, directamente cambió su comportamiento — empezó a llevar comida de su casa para evitar la incertidumbre.
 
-Del lado del personal, nos interesaba entender cómo se vive el problema desde el otro lado del mostrador. Lo que encontramos fue que el conocimiento existe — el personal sabe cuándo viene el pico, qué se va a pedir — pero no hay ninguna herramienta que les permita anticiparse. La experiencia no se traduce en acción porque el sistema no lo permite.
+Del lado del personal, Gabriela y Maximiliano nos mostraron el problema desde el otro mostrador. Lo que encontramos fue que el conocimiento existe — saben cuándo viene el pico, qué se va a pedir — pero no tienen ninguna herramienta para anticiparse. La experiencia no se traduce en acción porque el sistema no lo permite.
 
-El criterio de selección fue claro: queríamos cubrir todo el espectro, desde quien va todos los días hasta quien lo evita activamente, y desde quien atiende con años de experiencia hasta quien reconoce abiertamente que no logra llegar a todos.
-
+El criterio de selección fue ese: cubrir todo el espectro, desde quien va todos los días hasta quien lo evita activamente, y desde quien atiende con años de experiencia hasta quien reconoce que no logra llegar a todos.
 ---
 
 ## SLIDE 7 — Lo que escuchamos *(~45 seg)*
