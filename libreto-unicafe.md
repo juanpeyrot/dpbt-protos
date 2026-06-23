@@ -6,7 +6,7 @@
 
 ## SLIDE 1 — Portada *(~20 seg)*
 
-Buenas, Somos Guillermo Diotti, Juan Peyrot y Nicolás Toscano y Hoy les vamos a estar presentando **UniCafé**, un proyecto que nació de una pregunta muy sencilla: ¿por qué comer en la universidad tiene que ser tan difícil?
+Buenas, Somos Guillermo Diotti, Juan Peyrot y Nicolás Toscano y Hoy les vamos a estar presentando **UniCafé**
 
 ---
 
