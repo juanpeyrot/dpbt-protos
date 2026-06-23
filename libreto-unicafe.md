@@ -62,15 +62,11 @@ Y con toda esa información construimos journey maps, uno por cada entrevistado,
 
 Hablamos con cinco personas. Tres estudiantes y dos miembros del personal de cafetería.
 
-**Rodolfo** estudia en UDELAR, es celíaco, y muchas veces opta directamente por traer comida de casa para evitar la incertidumbre.
+Del lado de los estudiantes, el abanico fue amplio: quisimos cubrir desde quien va todos los días y evalúa cada vez si vale la pena arriesgarse, hasta quien directamente ya evita la cafetería para no exponerse a la espera. Y también casos donde la consecuencia fue concreta, por ejemplo llegar tarde a clase.
 
-**Franco**, de sistemas en ORT, va todos los días — pero si la fila le parece larga, se va sin comer. Evalúa constantemente si vale la pena arriesgarse.
+Del lado del personal, nos interesaba entender cómo se vive el problema desde el otro lado del mostrador. Lo que encontramos fue que el conocimiento existe — el personal sabe cuándo viene el pico, qué se va a pedir — pero no hay ninguna herramienta que les permita anticiparse. La experiencia no se traduce en acción porque el sistema no lo permite.
 
-**Marcos** estudia en Buenos Aires y llegó 15 minutos tarde a clase por esperar en la cafetería.
-
-Del lado del personal: **Gabriela** tiene mucha experiencia y sabe exactamente cuándo van a venir todos juntos — pero no tiene ninguna herramienta para anticiparse. Y **Maximiliano**, encargado de una cafetería en Colonia, nos dijo abiertamente que no logra atender a todos en el recreo.
-
-El criterio de selección fue claro: queríamos cubrir todo el espectro, desde quien va todos los días hasta quien lo evita activamente.
+El criterio de selección fue claro: queríamos cubrir todo el espectro, desde quien va todos los días hasta quien lo evita activamente, y desde quien atiende con años de experiencia hasta quien reconoce abiertamente que no logra llegar a todos.
 
 ---
 
@@ -120,11 +116,11 @@ Y el tercero, quizás el más importante: el celular ya está en la mano. Los es
 
 Para diseñar bien, teníamos que tener muy claro para quién estábamos diseñando.
 
-Sintetizamos dos personas principales a partir de las cinco entrevistas y dos sesiones de observación.
+Sintetizamos dos personas a partir de todo lo que recogimos en entrevistas y observación.
 
-**Franco** — el estudiante que evalúa constantemente si vale la pena ir. La incertidumbre lo frustra más que la espera en sí.
+El journey map de **Franco** nos mostró algo concreto: su estado emocional cae en picada antes de llegar a la cafetería. Sale de clase con apuro, llega, ve la fila y entra en duda — no sabe cuánto va a esperar, y esa incertidumbre es lo que lo lleva a irse sin comer. El problema no empieza en la fila, empieza antes, cuando no tiene información.
 
-**Gabriela** — la trabajadora con experiencia que prepara todo de antemano pero no puede prever la demanda. Quiere anticiparse al pico, no reaccionar cuando ya hay cola.
+El journey de **Gabriela** cuenta la misma historia desde el otro lado. Llega temprano, prepara todo, organiza el equipo — y aun así, cuando llega el recreo, el estrés y el agobio son inevitables. Los pedidos son repetitivos, el cobro es lento, y la demanda explota en minutos. Lo interesante es que el mapa termina con apertura: ella misma ve que la tecnología podría ayudar. El obstáculo no es la resistencia al cambio — es que nunca tuvo las herramientas.
 
 ---
 
