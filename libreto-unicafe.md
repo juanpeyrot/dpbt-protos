@@ -1,73 +1,72 @@
 # Libreto — UniCafé · DPBT 2026
+
 **Duración estimada: ~10 minutos**
-*Basado en la presentación de Guillermo Diotti, Juan Peyrot y Nicolás Toscano*
+_Basado en la presentación de Guillermo Diotti, Juan Peyrot y Nicolás Toscano_
 
 ---
 
-## SLIDE 1 — Portada *(~20 seg)*
+## SLIDE 1 — Portada _(~20 seg)_
 
 Buenas, Somos Guillermo Diotti, Juan Peyrot y Nicolás Toscano y Hoy les vamos a estar presentando **UniCafé**
 
 ---
 
-## SLIDE 2 — El desafío *(~55 seg)*
+## SLIDE 2 — El desafío _(~55 seg)_
 
-El tiempo entre clases es corto. La fila de la cafetería, en cambio, no.
+El problema central es la falta de tiempo y previsibilidad en la cafetería universitaria.
 
-Cuando empezamos a investigar, encontramos un patrón que se repetía: estudiantes que llegan a la cafetería, ven la cola, y se van sin comer. No porque no quieran comer — sino porque no saben cuánto van a esperar, y no pueden arriesgarse a llegar tarde a clase.
+Los estudiantes muchas veces deciden no comprar porque no saben cuánto van a esperar y no pueden arriesgarse a llegar tarde a clase. Al mismo tiempo, el personal tampoco tiene información para anticipar la demanda: los pedidos se hacen en el momento, de forma manual y desorganizada.
 
-El problema no está solo del lado del estudiante. El personal tampoco tiene información: no saben qué van a pedir hasta que los clientes ya están parados en el mostrador. Y los pedidos se anotan a mano, se repiten en voz alta — con todos los errores que eso implica.
+En horas pico, esto genera filas largas (más de 20 personas) y esperas de hasta 20 minutos, sin herramientas digitales que ayuden a ordenar el proceso.
 
-En hora pico, la espera puede llegar a los 10 o 20 minutos. Con más de 20 personas en fila. Sin ninguna herramienta digital que ayude a organizar el caos.
-
-La pregunta que nos hicimos fue: **¿Cómo podemos mejorar la experiencia de compra en la cafetería universitaria?**
+A partir de esto surge la pregunta clave: ¿cómo mejorar la experiencia de compra en la cafetería universitaria?
 
 ---
 
-## SLIDE 3 — Investigación preliminar *(~45 seg)*
+## SLIDE 3 — Investigación preliminar _(~45 seg)_
 
 Antes de hablar con usuarios, investigamos algunos documentos sobre este problema.
 
 Y pudimos encontrar estudios que documentaban que el tiempo total desde que un estudiante hace la fila hasta que termina de consumir puede llegar a los **50 minutos** en hora pico. Y que el cuello de botella está en la preparación de alimentos, ya que en muchos casos se hace en el momento.
 
-Ahora bien — un estudiante universitario tiene entre **15 y 20 minutos** de recreo. 
+Ahora bien — un estudiante universitario tiene entre **15 y 20 minutos** de recreo.
 
 Estos números confirmaron lo que intuíamos: el problema no es anecdótico, y tampoco es nuevo. Simplemente nadie lo había resuelto todavía.
 
 ---
 
-## SLIDE 4 — Metodología *(~30 seg)*
+## SLIDE 4 — Metodología _(~30 seg)_
 
 Para abordarlo fuimos realizando cada etapa de design thinking: empatizar, definir, idear, prototipar y testear.
 
-Este es un proceso el cual no es lineal, sino que, cada etapa retroalimentó las anteriores. 
+Este es un proceso el cual no es lineal, sino que, cada etapa retroalimentó las anteriores.
 En esta presentacion iremos viendo cada etapa, desde la primera entrevista hasta las pruebas con usuarios reales.
 
 ---
 
-## SLIDE 5 — Fase de empatía *(~40 seg)*
+## SLIDE 5 — Fase de empatía _(~40 seg)_
 
-Antes de plantear cualquier solución, queríamos entender cómo vive esta experiencia la gente que la sufre todos los días — tanto estudiantes como responsables de cantinas.
+Antes de proponer soluciones, se buscó entender la experiencia real de estudiantes y personal.
 
-Hicimos entrevistas en profundidad a cinco personas: tres estudiantes — Rodolfo, Franco y Marcos — y dos del lado operativo, Gabriela y Maximiliano. Las entrevistas fueron conversacionales, no un cuestionario rígido, buscando situaciones reales y no respuestas pensadas.
-También observamos la cafetería de la facultad durante un recreo: sacamos fotos con pocos minutos de diferencia, y el cambio fue evidente — de estar prácticamente vacía a tener aglomeración en la caja en apenas siete minutos. La demanda no crece gradual, explota.
+Se realizaron entrevistas en profundidad a cinco personas (tres estudiantes y dos trabajadores), de forma conversacional para captar situaciones auténticas. Además, se observó la cafetería en un recreo, donde se evidenció que la demanda no crece gradualmente, sino que se dispara en pocos minutos.
 
-A cada entrevista le aplicamos la técnica ¿Qué? ¿Cómo? ¿Por qué?, para ir más allá de lo observable y llegar a la motivación real. Y con todo eso armamos journey maps, uno por entrevistado, trazando su recorrido completo con acciones, pensamientos y emociones — lo que nos mostró que estudiantes y personal viven el mismo problema desde ángulos opuestos.
+Las entrevistas se analizaron con la técnica ¿Qué? ¿Cómo? ¿Por qué? para llegar a motivaciones profundas, y se construyeron journey maps individuales. Esto permitió ver que estudiantes y personal enfrentan el mismo problema, pero desde perspectivas opuestas.
 
 ---
 
-## SLIDE 6 — Usuarios entrevistados *(~50 seg)*
+## SLIDE 6 — Usuarios entrevistados _(~50 seg)_
 
-Hablamos con cinco personas: tres estudiantes y dos miembros del personal de cafetería.
+Se entrevistaron cinco personas: tres estudiantes y dos miembros del personal.
 
-Del lado de los estudiantes buscamos un abanico amplio: Marcos va todos los días y depende de la cantina para comer, sin alternativa. Franco también va a diario, pero evalúa cada vez si vale la pena arriesgarse a la fila. Y Rodolfo, que va menos seguido, directamente cambió su comportamiento — empezó a llevar comida de su casa para evitar la incertidumbre.
+Entre los estudiantes se cubrieron distintos comportamientos: uno que depende totalmente de la cantina, otro que decide según la fila, y otro que dejó de ir para evitar la incertidumbre.
 
-Del lado del personal, Gabriela y Maximiliano nos mostraron el problema desde el otro mostrador. Lo que encontramos fue que el conocimiento existe — saben cuándo viene el pico, qué se va a pedir — pero no tienen ninguna herramienta para anticiparse. La experiencia no se traduce en acción porque el sistema no lo permite.
+Del lado del personal, ambos coinciden en que tienen experiencia para anticipar la demanda, pero no cuentan con herramientas que les permitan actuar sobre ese conocimiento.
 
-El criterio de selección fue ese: cubrir todo el espectro, desde quien va todos los días hasta quien lo evita activamente, y desde quien atiende con años de experiencia hasta quien reconoce que no logra llegar a todos.
+El criterio fue abarcar todo el espectro: desde usuarios frecuentes hasta quienes evitan el servicio, y desde personal experimentado hasta quienes no logran responder a la demanda.
+
 ---
 
-## SLIDE 7 — Lo que escuchamos *(~45 seg)*
+## SLIDE 7 — Lo que escuchamos _(~45 seg)_
 
 Algunas de las cosas mas importantes que pudimos sacar de estas entrevistas para poder entender mejor el problema fueron por ejemplo, del lado de los estudiantes:
 
@@ -84,7 +83,7 @@ Estas no son situaciones excepcionales. Sino que son el día a día.
 
 ---
 
-## SLIDE 8 — Temas emergentes *(~40 seg)*
+## SLIDE 8 — Temas emergentes _(~40 seg)_
 
 Del análisis de todas las entrevistas y la observación surgieron cuatro temas que aparecieron una y otra vez.
 
@@ -98,32 +97,36 @@ Y el cuarto es la **carga operativa del personal**: Gabriela y Maximiliano saben
 
 ---
 
-## SLIDE 9 — Insights *(~50 seg)*
+## SLIDE 9 — Insights _(~50 seg)_
 
 De esos comportamientos, extrajimos tres insights que cambiaron cómo veíamos el problema.
 
-El primero: la fila no es el problema, es el síntoma. El problema real es la falta de visibilidad: el estudiante no sabe cuánto va a esperar, y el personal no sabe qué viene. Rodolfo lo describe muy bien cuando dice que mientras espera va "haciendo las cuentas en la cabeza" para ver si llega a clase. No es la espera en sí — es no saber cuánto va a durar. Eso es lo que lo hace insoportable. Y del otro lado, Maximiliano y Gabriela tienen exactamente el mismo problema, pero al revés: no saben cuánta demanda se viene hasta que ya la tienen encima. Los dos lados del mostrador están operando a ciegas. Sin información compartida entre ambos, el sistema colapsa apenas sube un poco la concurrencia.
+1. _El problema no es la fila, sino la falta de información._
+   Los estudiantes no saben cuánto van a esperar y el personal no puede anticipar la demanda. Ambos operan “a ciegas”, lo que hace que el sistema falle cuando aumenta la concurrencia.
 
-El segundo: el personal ya tiene el expertise, lo que le falta son las herramientas. Gabriela nos contaba que ella ya sabe, por experiencia, cuántas empanadas de carne va a necesitar un día determinado — ese conocimiento existe, está en su cabeza, pero no está en ningún sistema. Hoy esa información se pierde apenas termina el turno. Si lográramos capturar ese conocimiento — qué se pide, cuándo, en qué volumen — no estaríamos inventando una solución desde cero, estaríamos digitalizando algo que el personal ya sabe hacer intuitivamente.
-Y el tercero, quizás el más importante: el celular ya está en la mano. Los estudiantes están parados en la fila mirando el teléfono — ese tiempo de espera ya existe, ya está ahí, no lo estamos inventando. La oportunidad no es eliminar ese tiempo, sino redirigirlo: convertir el tiempo que hoy se pierde mirando el celular en la fila, en tiempo de pedido antes de llegar a la cafetería. Es el mismo gesto — mirar el teléfono — pero resolviendo el problema en lugar de solo acompañando la espera.
+2. _El conocimiento ya existe, pero no está sistematizado._
+   El personal tiene experiencia para prever qué se va a pedir y en qué cantidad, pero esa información no se registra ni se aprovecha. La oportunidad está en capturar y digitalizar ese saber.
 
----
-
-## SLIDE 10 — Personas *(~35 seg)*
-
-Para diseñar bien, teníamos que tener muy claro para quién estábamos diseñando.
-
-Sintetizamos dos personas a partir de todo lo que recogimos en entrevistas y observación.
-
-El journey map de **Franco** nos mostró algo concreto: su estado emocional cae en picada antes de llegar a la cafetería. Sale de clase con apuro, llega, ve la fila y entra en duda — no sabe cuánto va a esperar, y esa incertidumbre es lo que lo lleva a irse sin comer. El problema no empieza en la fila, empieza antes, cuando no tiene información.
-
-El journey de **Gabriela** cuenta la misma historia desde el otro lado. Llega temprano, prepara todo, organiza el equipo — y aun así, cuando llega el recreo, el estrés y el agobio son inevitables. Los pedidos son repetitivos, el cobro es lento, y la demanda explota en minutos. Lo interesante es que el mapa termina con apertura: ella misma ve que la tecnología podría ayudar. El obstáculo no es la resistencia al cambio — es que nunca tuvo las herramientas.
+3. _El celular ya forma parte del comportamiento._
+   Los estudiantes usan el teléfono mientras esperan. En lugar de eliminar la espera, se puede aprovechar ese momento para que hagan el pedido anticipadamente, transformando tiempo perdido en tiempo útil.
 
 ---
 
-## SLIDE 11 — POVs *(~40 seg)*
+## SLIDE 10 — Personas _(~35 seg)_
 
-Con los insights y las personas claros, construimos cuatro puntos de vista con un formato de *usuario · necesita · porque*, para convertir los hallazgos en problemas accionables.
+Para diseñar correctamente, se definieron dos perfiles clave basados en la investigación: uno del lado del estudiante y otro del personal.
+
+El journey de Franco muestra que el problema comienza antes de llegar a la fila: la incertidumbre sobre el tiempo de espera genera ansiedad y termina haciendo que decida no comprar. No es solo la fila, es la falta de información previa.
+
+El journey de Gabriela refleja la misma tensión desde el otro lado: aunque hay preparación y experiencia, el momento de alta demanda desborda cualquier organización. Los procesos manuales vuelven todo más lento y estresante.
+
+Ambos casos revelan lo mismo: el problema es compartido, pero vivido desde perspectivas opuestas. Y, clave, no hay resistencia a cambiar — hay una oportunidad clara para que la tecnología aporte soluciones.
+
+---
+
+## SLIDE 11 — POVs _(~40 seg)_
+
+Con los insights y las personas claros, construimos cuatro puntos de vista con un formato de _usuario · necesita · porque_, para convertir los hallazgos en problemas accionables.
 
 El primero plantea que un estudiante universitario con poco tiempo entre clases necesita una forma **rápida y organizada de realizar pedidos** en cafeterías, porque la incertidumbre y las filas extensas le generan estrés y pérdida de tiempo.
 
@@ -135,43 +138,33 @@ Y el cuarto, desde el lado del personal: que necesitan una **forma más eficient
 
 ---
 
-## SLIDE 12 — POV seleccionado *(~45 seg)*
+## SLIDE 12 — POV seleccionado _(~45 seg)_
 
-De los cuatro, elegimos uno como eje del diseño — el que mejor sintetiza la tensión central del problema:
-
-> *"Un estudiante universitario con poco tiempo entre clases necesita una forma rápida y organizada de realizar pedidos en cafeterías, porque la incertidumbre y las filas extensas le generan estrés y pérdida de tiempo."*
+De los cuatro, elegimos el que se muestra en pantalla como el eje del diseño — el que mejor sintetiza la tensión central del problema.
 
 ¿Por qué este? Porque resuelve el lado estudiantil y el operativo al mismo tiempo: si el estudiante puede ordenar con antelación, el personal recibe la demanda antes del pico. Por lo que estamos atacando los 2 problemas al mismo tiempo.
 
 ---
 
-## SLIDE 13 — Competidores *(~30 seg)*
+## SLIDE 13 — Competidores _(~30 seg)_
 
 Antes de definir nuestra solución, nos fijamos tambien en que estaba haciendo la posible competencia.
 
-Por ejemplo McDonald's y Starbucks tienen apps con pedido anticipado, pago digital y seguimiento. Las cuales Funcionan muy bien para su contexto.
+Apps como McDonald's y Starbucks ya ofrecen pedido anticipado y pago digital, pero no están pensadas para el contexto universitario.
 
-Pero lo que ninguna de ellas tiene es un **enfoque universitario**: con pago en efectivo como opción, con un panel de gestión para el personal, y diseñada para un entorno donde el menú cambia todos los días y el usuario tiene exactamente 15 minutos para comer.
-
-Por lo que ese espacio estaba vacante.
+Ninguna contempla efectivo, gestión para el personal ni menús cambiantes con tiempos tan acotados, dejando ese espacio sin cubrir.
 
 ---
 
-## SLIDE 14 — Ideación / HMW *(~30 seg)*
+## SLIDE 14 — Ideación / HMW _(~30 seg)_
 
-Para abrir el espacio de soluciones sin comprometernos todavía con ninguna implementación, tradujimos el POV en preguntas "How Might We".
+Transformamos el POV en preguntas “How Might We” para abrir soluciones, como anticipar pedidos, mostrar tiempos de espera, reducir la congestión y prever la demanda.
 
-Per ejemplo:
-¿Cómo podríamos permitir que los estudiantes realicen su pedido antes de llegar? 
-¿Cómo podríamos mostrarle al estudiante cuánto tiempo de espera hay? 
-¿Cómo podríamos reducir la congestión en caja sin agregar personal? 
-Y ¿Cómo podríamos ayudar al personal a conocer la demanda antes del recreo?
-
-Estas preguntas fueron el punto de partida para diseñar la solución.
+Estas preguntas guiaron el diseño de la solución.
 
 ---
 
-## SLIDE 15 — Concepto de solución *(~50 seg)*
+## SLIDE 15 — Concepto de solución _(~50 seg)_
 
 La solucion que planteamos es **UniCafé**
 
@@ -183,7 +176,7 @@ Gracias a esto, pasamos de un sistema donde todos llegan al mismo tiempo a pedir
 
 ---
 
-## SLIDE 16 — Pretotipo *(~30 seg)*
+## SLIDE 16 — Pretotipo _(~30 seg)_
 
 Lo primero que hicimos fue validar la estructura de a aplicacion dibujando las pantallas a mano.
 
@@ -193,7 +186,7 @@ La respuesta fue inmediata: entendieron el flujo solos, sin explicación.
 
 ---
 
-## SLIDE 17 — Prototipo alta fidelidad *(~35 seg)*
+## SLIDE 17 — Prototipo alta fidelidad _(~35 seg)_
 
 Con esa validación, pasamos al prototipo de alta fidelidad.
 
@@ -203,18 +196,18 @@ El prototipo tiene el nivel de detalle suficiente para que un usuario real lo na
 
 ---
 
-## SLIDE 18 — Testeo *(~50 seg)*
+## SLIDE 18 — Testeo _(~50 seg)_
 
 Luego de hechos los prototipos, los pusimos en manos de usuarios reales y observamos los resultados. Lo más relevante fue que: **el flujo se completó sin asistencia** — la lógica fue comprendida de forma inmediata. Y la notificación de pedido listo fue valorada como **el elemento más útil** de toda la propuesta.
 
-Pero también escuchamos qué necesitaban mejorar. como por ejemplo que no se entendia bien cuadno pagar, que querian ver un resumen antes de confirmar el pago, o que estaria bueno poder agregar mas detalles al pedido 
-Tambien por parte del personal personal que *"Tiene que ser bien simple para el que atiende — si hay muchos pasos se complica en el momento."*
+Pero también escuchamos qué necesitaban mejorar. como por ejemplo que no se entendia bien cuadno pagar, que querian ver un resumen antes de confirmar el pago, o que estaria bueno poder agregar mas detalles al pedido
+Tambien por parte del personal personal que _"Tiene que ser bien simple para el que atiende — si hay muchos pasos se complica en el momento."_
 
 Esto era exactamente lo que necesitábamos saber: qué funciona y qué hay que ajustar.
 
 ---
 
-## SLIDE 19 — Próximos pasos *(~30 seg)*
+## SLIDE 19 — Próximos pasos _(~30 seg)_
 
 El prototipo valida el concepto. Los próximos pasos son de implementación y adopción.
 
@@ -226,6 +219,6 @@ Tercero: si el modelo funciona, replicarlo en otros puntos de venta del campus �
 
 ---
 
-## SLIDE 20 — Cierre *(~20 seg)*
+## SLIDE 20 — Cierre _(~20 seg)_
 
 Bueno, muchas gracias por escuchar nuestra propuesta y cualquier duda quedamos a las ordenes.
